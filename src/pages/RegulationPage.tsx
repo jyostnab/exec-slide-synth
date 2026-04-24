@@ -33,6 +33,7 @@ export default function RegulationPage() {
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
   const aiPct = totalCredits ? Math.round((totalAICredits / Number(totalCredits)) * 100) : 0;
   const showStats = reg.id !== "r22-c22" && reg.id !== "r22-c24";
+  const showSemesterJump = reg.id !== "r22-c22";
 
   return (
     <div className="px-4 sm:px-8 py-6 max-w-[1400px] mx-auto">
@@ -223,43 +224,47 @@ export default function RegulationPage() {
             </div>
           )}
 
-          {/* Semester grid */}
-          <div className="flex items-center gap-2 mb-3 mt-2">
-            <BookOpen className="h-4 w-4 text-muted-foreground" />
-            <h2 className="text-xs uppercase tracking-widest text-muted-foreground">Jump to Semester</h2>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
-            {reg.semesters.map((s) => {
-              const aiCount = s.courses.filter(c => c.ai).length;
-              return (
-                <NavLink
-                  key={s.id}
-                  to={`/r/${reg.id}/${s.id}`}
-                  className="glass-card group p-4 hover:border-primary/50 transition-colors"
-                >
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <div className={cn("text-[10px] uppercase tracking-widest", accent)}>{s.short}</div>
-                      <div className="font-serif text-base mt-1 text-foreground leading-tight">
-                        {s.label.replace(/^.+ — /, '')}
+          {showSemesterJump && (
+            <>
+              {/* Semester grid */}
+              <div className="flex items-center gap-2 mb-3 mt-2">
+                <BookOpen className="h-4 w-4 text-muted-foreground" />
+                <h2 className="text-xs uppercase tracking-widest text-muted-foreground">Jump to Semester</h2>
+              </div>
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
+                {reg.semesters.map((s) => {
+                  const aiCount = s.courses.filter(c => c.ai).length;
+                  return (
+                    <NavLink
+                      key={s.id}
+                      to={`/r/${reg.id}/${s.id}`}
+                      className="glass-card group p-4 hover:border-primary/50 transition-colors"
+                    >
+                      <div className="flex items-start justify-between">
+                        <div>
+                          <div className={cn("text-[10px] uppercase tracking-widest", accent)}>{s.short}</div>
+                          <div className="font-serif text-base mt-1 text-foreground leading-tight">
+                            {s.label.replace(/^.+ — /, '')}
+                          </div>
+                        </div>
+                        <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                       </div>
-                    </div>
-                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  </div>
-                  <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
-                    <span className="tabular-nums"><b className="text-foreground">{s.totalCredits}</b> credits</span>
-                    <span className="tabular-nums">{s.courses.length} courses</span>
-                    {aiCount > 0 && (
-                      <span className="flex items-center gap-1 text-[hsl(var(--ai-track))]">
-                        <Star className="h-3 w-3 fill-current" />
-                        {aiCount}
-                      </span>
-                    )}
-                  </div>
-                </NavLink>
-              );
-            })}
-          </div>
+                      <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
+                        <span className="tabular-nums"><b className="text-foreground">{s.totalCredits}</b> credits</span>
+                        <span className="tabular-nums">{s.courses.length} courses</span>
+                        {aiCount > 0 && (
+                          <span className="flex items-center gap-1 text-[hsl(var(--ai-track))]">
+                            <Star className="h-3 w-3 fill-current" />
+                            {aiCount}
+                          </span>
+                        )}
+                      </div>
+                    </NavLink>
+                  );
+                })}
+              </div>
+            </>
+          )}
 
           {/* All semesters stacked */}
           <div className="space-y-6">
