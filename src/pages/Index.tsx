@@ -41,13 +41,7 @@ const Index = () => {
               className="h-16 sm:h-20 w-auto object-contain mx-auto bg-white rounded-md px-3 py-1.5 shadow-md"
             />
 
-            {/* Eyebrow */}
-            <div className="inline-flex items-center gap-2 text-[11px] tracking-[0.25em] uppercase text-primary font-semibold mt-7">
-              <Sparkles className="h-3.5 w-3.5" />
-              Board of Studies · 2026
-            </div>
-
-            <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold mt-3">
+            <div className="text-xs uppercase tracking-[0.3em] text-muted-foreground font-semibold mt-7">
               B.Tech · CSE-AIML · Course Curriculum
             </div>
 
