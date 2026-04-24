@@ -3,7 +3,7 @@ import { REGULATIONS } from "@/data/curriculum";
 import { cn } from "@/lib/utils";
 import {
   ArrowRight, Sparkles, Brain, Cpu, Network, Rocket,
-  GraduationCap, Star, Layers, Target, Zap, BookOpenCheck, ArrowLeft,
+  GraduationCap, Star, Target, ArrowLeft,
 } from "lucide-react";
 
 const accentText: Record<string, string> = {
@@ -26,11 +26,6 @@ const accentDot: Record<string, string> = {
 };
 
 const Overview = () => {
-  const allCourses = REGULATIONS.flatMap(r => r.semesters.flatMap(s => s.courses));
-  const totalAI = allCourses.filter(c => c.ai).length;
-  const totalCourses = allCourses.length;
-  const aiPct = Math.round((totalAI / totalCourses) * 100);
-
   const pillars = [
     { icon: Brain, title: "AI-First Curriculum", body: "From Pre-Semester onward, every learner builds with Generative AI, Agentic Tools, and Prompt Engineering." },
     { icon: Network, title: "Agentic Systems", body: "Multi-Agentic Systems & LLM Engineering elevate students from model users to autonomous-system architects." },
@@ -60,26 +55,6 @@ const Overview = () => {
         <h1 className="font-serif text-2xl sm:text-4xl text-foreground max-w-3xl">
           The Agentic AI journey, at a glance.
         </h1>
-      </div>
-
-      {/* Stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-10">
-        {[
-          { label: "Regulations", value: REGULATIONS.length, icon: Layers },
-          { label: "Total Courses", value: totalCourses, icon: BookOpenCheck },
-          { label: "AI / ML Courses", value: totalAI, icon: Star, hot: true },
-          { label: "AI Coverage", value: `${aiPct}%`, icon: Zap, hot: true },
-        ].map((s) => (
-          <div key={s.label} className="glass-card px-4 py-3">
-            <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-muted-foreground">
-              <s.icon className="h-3 w-3" /> {s.label}
-            </div>
-            <div className={cn("font-serif text-2xl mt-1 tabular-nums",
-              s.hot ? "text-[hsl(var(--ai-track))]" : "text-foreground")}>
-              {s.value}
-            </div>
-          </div>
-        ))}
       </div>
 
       {/* Timeline */}
