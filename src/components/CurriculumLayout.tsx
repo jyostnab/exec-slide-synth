@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
+import vignanLogo from "@/assets/vignan-logo.png";
 
 export default function CurriculumLayout() {
   return (
@@ -8,10 +9,16 @@ export default function CurriculumLayout() {
       <div className="min-h-screen flex w-full">
         <AppSidebar />
         <div className="flex-1 flex flex-col min-w-0">
-          <header className="h-12 flex items-center gap-2 border-b border-border/60 px-3 sticky top-0 z-20 bg-background/70 backdrop-blur">
+          <header className="h-14 flex items-center gap-3 border-b border-border/60 px-3 sticky top-0 z-20 bg-background/80 backdrop-blur">
             <SidebarTrigger className="text-muted-foreground hover:text-foreground" />
-            <div className="h-4 w-px bg-border mx-1" />
-            <h1 className="font-serif text-sm text-foreground">
+            <div className="h-5 w-px bg-border mx-1" />
+            <img
+              src={vignanLogo}
+              alt="Vignan's Foundation for Science, Technology & Research"
+              className="h-9 w-auto object-contain bg-white/95 rounded px-2 py-0.5"
+            />
+            <div className="hidden sm:block h-5 w-px bg-border mx-1" />
+            <h1 className="hidden sm:block font-serif text-sm text-foreground">
               AIML Curriculum — R22 to R25
             </h1>
             <div className="ml-auto text-[11px] text-muted-foreground tracking-wider uppercase">
@@ -26,3 +33,4 @@ export default function CurriculumLayout() {
     </SidebarProvider>
   );
 }
+
