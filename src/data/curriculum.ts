@@ -118,7 +118,7 @@ const R25_C26_II_II: Semester = {
 };
 
 const R25_C26_III_I: Semester = {
-  id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 25,
+  id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 21,
   courses: [
     tag({ title: 'Soft Skills Laboratory', L:0,T:0,P:2,C:1, category: 'Humanities' }),
     tag({ title: 'Quantitative Aptitude and Logical Reasoning', L:0,T:2,P:0,C:1, category: 'Humanities' }),
@@ -127,12 +127,11 @@ const R25_C26_III_I: Semester = {
     tag({ title: 'Computer Vision', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-9' }),
     tag({ title: 'Full Stack Development', L:2,T:0,P:4,SL:2,C:4, category: 'Professional Core-10' }),
     tag({ title: 'Computer Networks', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-11' }),
-    tag({ title: 'Minor / Honors (Add-on)', L:3,T:0,P:2,C:4, category: 'Minor / Honors' }),
   ],
 };
 
 const R25_C26_III_II: Semester = {
-  id: '3-2', label: 'III Year — II Semester', short: 'III-II', totalCredits: 24,
+  id: '3-2', label: 'III Year — II Semester', short: 'III-II', totalCredits: 20,
   courses: [
     tag({ title: 'Professional Communication Skills', L:0,T:0,P:2,C:1, category: 'Humanities' }),
     tag({ title: 'Generative & Agentic Systems', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-3' }),
@@ -141,27 +140,24 @@ const R25_C26_III_II: Semester = {
     tag({ title: 'Natural Language Processing', L:2,T:0,P:2,SL:2,C:4, category: 'Professional Core-12' }),
     tag({ title: 'Big Data Analytics', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-13' }),
     tag({ title: 'Project', C:1, category: 'Project' }),
-    tag({ title: 'Minor / Honors (Add-on)', C:4, category: 'Minor / Honors' }),
   ],
 };
 
 const R25_C26_IV_I: Semester = {
-  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 21,
+  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 17,
   courses: [
     tag({ title: 'Professional Ethics, AI Governance & Risk Assessment', L:1,T:2,P:0,SL:1,C:2, category: 'Humanities' }),
     tag({ title: 'Reinforcement Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-5' }),
     tag({ title: 'Multi-Agentic Systems and LLM Engineering', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-6' }),
     tag({ title: 'Work-in-Lieu (Research papers / Patents / Global certifications)', L:0,T:2,P:12,C:4, category: 'Department Elective-7' }),
     tag({ title: 'Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-3' }),
-    tag({ title: 'Minor / Honors (Add-on)', L:0,T:2,P:6,C:4, category: 'Minor / Honors' }),
   ],
 };
 
 const R25_C26_IV_II: Semester = {
-  id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 16,
+  id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 12,
   courses: [
     tag({ title: 'Project / Internship (Capstone)', L:0,T:2,P:22,C:12, category: 'Project / Internship' }),
-    tag({ title: 'Minor / Honors (Add-on)', L:0,T:2,P:6,C:4, category: 'Minor / Honors' }),
   ],
 };
 
@@ -176,7 +172,7 @@ const r25Semesters: Semester[] = [
 // R22-C24 — Original + AI Adoption (only III & IV year defined in source)
 // ────────────────────────────────────────────────────────────────────────────
 const R22_C24_III_I: Semester = {
-  id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 25,
+  id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 21,
   courses: [
     tag({ code: '24EN301', title: 'Professional Communication Skills', L:0,T:0,P:2,C:1, category: 'Humanities' }),
     tag({ code: '22AM301', title: 'Deep Learning', L:3,T:0,P:2,C:4, category: 'Professional Core' }),
@@ -186,11 +182,10 @@ const R22_C24_III_I: Semester = {
     tag({ title: 'Department Elective – 1 (Computer Vision)', L:3,T:0,P:2,C:4, category: 'Department Elective' }),
     tag({ title: 'Department Elective – 2 (Fundamentals of Image Processing)', L:2,T:0,P:2,C:3, category: 'Department Elective' }),
     tag({ title: 'Open Elective – 2 (NPTEL)', L:3,T:0,P:0,C:3, category: 'Open Elective' }),
-    tag({ title: 'Minor / Honors – 2', L:3,T:0,P:2,C:4, category: 'Minor / Honors' }),
   ],
 };
 const R22_C24_III_II: Semester = {
-  id: '3-2', label: 'III Year — II Semester', short: 'III-II', totalCredits: 25,
+  id: '3-2', label: 'III Year — II Semester', short: 'III-II', totalCredits: 21,
   courses: [
     tag({ code: '24TP301', title: 'Quantitative Aptitude & Logical Reasoning', L:1,T:2,P:0,C:2, category: 'Humanities' }),
     tag({ code: '24AM301', title: 'Natural Language Processing', L:3,T:0,P:2,C:4, category: 'Professional Core' }),
@@ -199,11 +194,10 @@ const R22_C24_III_II: Semester = {
     tag({ code: '24AM302', title: 'Inter Departmental Project', L:0,T:0,P:2,C:1, category: 'Project' }),
     tag({ title: 'Department Elective – 3', L:3,T:0,P:2,C:4, category: 'Department Elective' }),
     tag({ title: 'Open Elective – 3', L:3,T:0,P:0,C:3, category: 'Open Elective' }),
-    tag({ title: 'Minor / Honors – 3', L:3,T:2,P:2,C:4, category: 'Minor / Honors' }),
   ],
 };
 const R22_C24_IV_I: Semester = {
-  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 25,
+  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 21,
   courses: [
     tag({ code: '22CS401', title: 'Cryptography and Network Security', L:3,T:0,P:2,C:4, category: 'Professional Core' }),
     tag({ code: '22AM305', title: 'Reinforcement Learning', L:2,T:0,P:2,C:3, category: 'Professional Core' }),
@@ -211,14 +205,12 @@ const R22_C24_IV_I: Semester = {
     tag({ title: 'Department Elective – 4 (Generative AI & LLMs)', L:3,T:0,P:2,C:4, category: 'Department Elective', highlight: 'AI Adoption: Generative AI & LLMs' }),
     tag({ title: 'Department Elective – 5', L:3,T:0,P:2,C:4, category: 'Department Elective' }),
     tag({ title: 'Department Elective – 6', L:3,T:0,P:2,C:4, category: 'Department Elective' }),
-    tag({ title: 'Minor / Honors – 4', L:3,T:0,P:2,C:4, category: 'Minor / Honors' }),
   ],
 };
 const R22_C24_IV_II: Semester = {
-  id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 16,
+  id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 12,
   courses: [
     tag({ code: '22AM403/22AM404', title: 'Internship / Project Work', L:0,T:2,P:22,C:12, category: 'Project' }),
-    tag({ title: 'Minor / Honors – 5', L:0,T:2,P:6,C:4, category: 'Minor / Honors' }),
   ],
 };
 
@@ -226,21 +218,19 @@ const R22_C24_IV_II: Semester = {
 // R22-C22 — Original + AI Adoption (only IV year defined in source)
 // ────────────────────────────────────────────────────────────────────────────
 const R22_C22_IV_I: Semester = {
-  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 23,
+  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 19,
   courses: [
     tag({ code: '22AM401', title: 'Knowledge Representation and Reasoning', L:2,T:2,P:0,C:3, category: 'Professional Core' }),
     tag({ code: '22AM402', title: 'Text Mining', L:3,T:0,P:2,C:4, category: 'Professional Core' }),
     tag({ code: '22CS402', title: 'Big Data Analytics', L:3,T:0,P:2,C:4, category: 'Professional Core' }),
     tag({ code: '22AM810', title: 'Internet of Things', L:3,T:0,P:2,C:4, category: 'Department Elective' }),
     tag({ code: '22NP301', title: 'Department Elective – 4 (Generative AI & LLMs)', L:3,T:0,P:2,C:4, category: 'Department Elective', highlight: 'AI Adoption: Generative AI & LLMs' }),
-    tag({ code: '22AM962', title: 'Minor / Honors – 4 (Cloud Computing for Machine Learning)', L:3,T:0,P:2,C:4, category: 'Minor / Honors', highlight: 'AI Adoption: Cloud Computing for ML' }),
   ],
 };
 const R22_C22_IV_II: Semester = {
-  id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 16,
+  id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 12,
   courses: [
     tag({ code: '22AM403', title: 'Internship / Project Work', L:0,T:2,P:22,C:12, category: 'Project' }),
-    tag({ title: 'Minor / Honors – 5 (Deep Learning)', L:0,T:2,P:6,C:4, category: 'Minor / Honors', highlight: 'AI Adoption: Deep Learning' }),
   ],
 };
 
