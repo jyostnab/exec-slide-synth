@@ -2,7 +2,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { findRegulation } from "@/data/curriculum";
 import { SemesterTable } from "@/components/SemesterTable";
 import { cn } from "@/lib/utils";
-import { ArrowRight, BookOpen, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Star, MessageSquareQuote, Sparkles } from "lucide-react";
 
 const accentClass: Record<string, string> = {
   cyan: "text-primary",
@@ -22,6 +22,7 @@ export default function RegulationPage() {
   const totalCourses = reg.semesters.reduce((a, s) => a + s.courses.length, 0);
   const totalAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
+  const aiPct = totalCourses ? Math.round((totalAI / totalCourses) * 100) : 0;
 
   return (
     <div className="px-4 sm:px-8 py-6 max-w-[1400px] mx-auto">
@@ -37,11 +38,12 @@ export default function RegulationPage() {
       {!semester && (
         <>
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
             {[
               { label: "Semesters", value: reg.semesters.length },
               { label: "Courses", value: totalCourses },
               { label: "AI / ML Courses", value: totalAI, accent: true },
+              { label: "AI / ML %", value: `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ].map((s) => (
               <div key={s.label} className="glass-card px-4 py-3">
@@ -55,6 +57,29 @@ export default function RegulationPage() {
               </div>
             ))}
           </div>
+
+          {/* BoS Comments — only on R25-C26 */}
+          {reg.id === 'r25-c26' && (
+            <div className="glass-card p-5 mb-6 border-primary/30">
+              <div className="flex items-center gap-2 mb-2">
+                <MessageSquareQuote className="h-4 w-4 text-primary" />
+                <h3 className="text-xs uppercase tracking-[0.2em] text-primary font-semibold">
+                  Board of Studies — Revision Note
+                </h3>
+              </div>
+              <p className="text-sm text-foreground/90 leading-relaxed">
+                As part of the university-wide transition into an{" "}
+                <b className="text-primary">Agentic AI University</b>, the R25-C26 curriculum has
+                been comprehensively revised. The Board of Studies has restructured every semester
+                to embed Generative AI, Multi-Agentic Systems, MLOps, and Responsible AI practices
+                from the Pre-Semester through the Capstone — ensuring graduates are industry-ready
+                AI Systems Engineers.
+              </p>
+              <p className="text-xs text-muted-foreground italic mt-3">
+                Detailed BoS comments to be appended on receipt of the official upload.
+              </p>
+            </div>
+          )}
 
           {/* Semester grid */}
           <div className="flex items-center gap-2 mb-3 mt-2">
