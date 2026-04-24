@@ -20,22 +20,18 @@ const Index = () => {
               className="h-16 sm:h-20 w-auto object-contain mx-auto bg-white rounded-md px-3 py-1.5 shadow-md"
             />
 
-            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mt-7">
-              Curriculum Revision
-            </div>
-
             {/* Title */}
-            <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-3">
+            <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-7">
               VFSTR <span className="text-primary">Agentic AI</span> Transformation
             </h1>
+
+            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mt-3">
+              Curriculum Revision
+            </div>
 
             <p className="text-sm sm:text-lg text-foreground/90 mt-4 max-w-2xl mx-auto leading-relaxed">
               B.Tech CSE — Artificial Intelligence and Machine Learning (AIML)
             </p>
-
-            <div className="mt-3 inline-flex items-center gap-2 rounded-full border border-[hsl(var(--ai-track))]/40 bg-[hsl(var(--ai-track))]/10 px-3 py-1 text-[11px] uppercase tracking-widest text-[hsl(var(--ai-track))] font-semibold">
-              <Sparkles className="h-3 w-3" /> Regulation R25-C25 · Agentic AI Curriculum
-            </div>
 
             {/* Presenter */}
             <div className="mt-8 inline-flex items-center gap-3 rounded-lg border border-primary/30 bg-primary/5 px-5 py-3">
