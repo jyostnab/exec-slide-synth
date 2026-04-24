@@ -21,6 +21,10 @@ export default function RegulationPage() {
 
   const totalCourses = reg.semesters.reduce((a, s) => a + s.courses.length, 0);
   const totalAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
+  const totalAICredits = reg.semesters.reduce(
+    (a, s) => a + s.courses.filter(c => c.ai).reduce((b, c) => b + Number(c.C || 0), 0),
+    0,
+  );
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
   const aiPct = totalCourses ? Math.round((totalAI / totalCourses) * 100) : 0;
 
@@ -47,7 +51,7 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: totalAI, accent: true },
+              { label: "AI / ML Courses", value: `${totalAI} · ${totalAICredits} cr`, accent: true },
               { label: "AI / ML %", value: `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ].map((s) => (
