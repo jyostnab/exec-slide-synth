@@ -51,7 +51,7 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: totalAI, accent: true },
+              { label: "AI / ML Courses", value: `${totalAI} · ${totalAICredits} cr`, accent: true },
               { label: "AI / ML %", value: `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ].map((s) => (
