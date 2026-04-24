@@ -19,11 +19,8 @@ export default function CurriculumLayout() {
             />
             <div className="hidden sm:block h-5 w-px bg-border mx-1" />
             <h1 className="hidden sm:block font-serif text-sm text-foreground">
-              AIML Curriculum — R22 to R25
+              B.Tech CSE-AIML — Curriculum
             </h1>
-            <div className="ml-auto text-[11px] text-muted-foreground tracking-wider uppercase">
-              Board of Studies · 2026
-            </div>
           </header>
           <main className="flex-1 min-w-0 overflow-x-hidden">
             <Outlet />
