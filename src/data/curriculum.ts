@@ -147,6 +147,20 @@ const R25_C26_II_II: Semester = {
   ],
 };
 
+const R25_C25_II_II: Semester = {
+  id: '2-2', label: 'II Year — II Semester', short: 'II-II', totalCredits: 23,
+  courses: [
+    tag({ title: 'Linear Algebra for ML (Dept. Specific – Maths)', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
+    tag({ title: 'Industry Interface – I²C', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
+    tag({ title: 'Open Elective (NPTEL)', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-I' }),
+    tag({ title: 'Algorithm Design and Analysis', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-4' }),
+    tag({ title: 'Machine Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-5' }),
+    tag({ title: 'Operating Systems', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core' }),
+    tag({ title: 'Digital Logic & Computer Organization', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-7' }),
+    tag({ title: 'Mini Project', C:1, category: 'Project' }),
+  ],
+};
+
 const R25_C26_III_I: Semester = {
   id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 21,
   courses: [
@@ -200,7 +214,7 @@ const r25Semesters: Semester[] = [
 
 const r25C25Semesters: Semester[] = [
   R25_C25_PRE, R25_C26_I_I, R25_C25_I_II,
-  R25_C26_II_I, R25_C26_II_II,
+  R25_C26_II_I, R25_C25_II_II,
   R25_C26_III_I, R25_C26_III_II,
   R25_C26_IV_I, R25_C26_IV_II,
 ];
