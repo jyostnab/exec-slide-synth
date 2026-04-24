@@ -193,7 +193,7 @@ const R25_C26_III_II: Semester = {
   id: '3-2', label: 'III Year — II Semester', short: 'III-II', totalCredits: 20,
   courses: [
     tag({ title: 'Professional Communication Skills', L:0,T:0,P:2,C:1, category: 'Humanities' }),
-    tag({ title: 'Generative & Agentic Systems', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-3' }),
+    tag({ title: 'Cloud Computing', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-3' }),
     tag({ title: 'Cloud Computing for AI', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-4' }),
     tag({ title: 'NPTEL / Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-2' }),
     tag({ title: 'Natural Language Processing', L:2,T:0,P:2,SL:2,C:4, category: 'Professional Core-12' }),
@@ -206,8 +206,8 @@ const R25_C26_IV_I: Semester = {
   id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 17,
   courses: [
     tag({ title: 'Professional Ethics, AI Governance & Risk Assessment', L:1,T:2,P:0,SL:1,C:2, category: 'Humanities' }),
-    tag({ title: 'Reinforcement Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-5' }),
-    tag({ title: 'Multi-Agentic Systems and LLM Engineering', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-6' }),
+    tag({ title: 'Big Data Analytics', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-5' }),
+    tag({ title: 'IoT', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-6' }),
     tag({ title: 'Work-in-Lieu (Research papers / Patents / Global certifications)', L:0,T:2,P:12,C:4, category: 'Department Elective-7' }),
     tag({ title: 'Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-3' }),
   ],
