@@ -63,12 +63,6 @@ const Index = () => {
               >
                 Explore R25-C26 (Latest) <ArrowRight className="h-4 w-4" />
               </NavLink>
-              <NavLink
-                to="/overview"
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-border text-foreground font-medium text-sm hover:bg-secondary transition-colors"
-              >
-                <Compass className="h-4 w-4" /> Transformation Overview
-              </NavLink>
             </div>
           </div>
         </section>
