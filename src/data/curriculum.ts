@@ -66,6 +66,18 @@ const R25_C26_PRE: Semester = {
   ],
 };
 
+const R25_C25_PRE: Semester = {
+  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 6,
+  courses: [
+    tag({ title: 'Mathematics', C: 1, category: 'Basic Sciences' }),
+    tag({ title: 'English Communication', C: 1, category: 'Humanities' }),
+    tag({ title: 'Aptitude & Logical Reasoning', C: 1, category: 'Humanities' }),
+    tag({ title: 'IT Tools', C: 1, category: 'Basic Engineering' }),
+    tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 2', C: 1, category: 'Binary Graded' }),
+  ],
+};
+
 const R25_C26_I_I: Semester = {
   id: '1-1', label: 'I Year — I Semester', short: 'I-I', totalCredits: 22,
   courses: [
@@ -172,6 +184,13 @@ const r25Semesters: Semester[] = [
   R25_C26_IV_I, R25_C26_IV_II,
 ];
 
+const r25C25Semesters: Semester[] = [
+  R25_C25_PRE, R25_C26_I_I, R25_C26_I_II,
+  R25_C26_II_I, R25_C26_II_II,
+  R25_C26_III_I, R25_C26_III_II,
+  R25_C26_IV_I, R25_C26_IV_II,
+];
+
 // ────────────────────────────────────────────────────────────────────────────
 // R22-C24 — Original + AI Adoption (only III & IV year defined in source)
 // ────────────────────────────────────────────────────────────────────────────
@@ -262,7 +281,7 @@ export const REGULATIONS: Regulation[] = [
     title: 'R25 – C25 Course Structure',
     description: 'Full 4-year R25 regulation with Agentic AI Tools from pre-semester onward.',
     accent: 'violet',
-    semesters: r25Semesters,
+    semesters: r25C25Semesters,
   },
   {
     id: 'r25-c26',
