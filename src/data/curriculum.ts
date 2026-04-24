@@ -96,7 +96,7 @@ const R25_C26_I_II: Semester = {
   courses: [
     tag({ title: 'Mathematics – II', L:3,T:1,P:0,C:4, category: 'Basic Sciences' }),
     tag({ title: 'Physics / Chemistry', L:3,T:0,P:2,C:4, category: 'Basic Sciences' }),
-    { ...tag({ title: 'Python Programming Essentials for AI', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }), ai: false },
+    tag({ title: 'Python Programming Essentials for AI', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
     tag({ title: 'Basic Electrical & Electronics / Engineering Graphics', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
     tag({ title: 'Technical English Communication', L:1,T:0,P:2,C:2, category: 'Humanities' }),
     tag({ title: 'Environmental / Management Studies', L:3,T:0,P:0,C:3, category: 'Humanities' }),
@@ -110,7 +110,7 @@ const R25_C25_I_II: Semester = {
   courses: [
     tag({ title: 'Mathematics – II', L:3,T:1,P:0,C:4, category: 'Basic Sciences' }),
     tag({ title: 'Physics / Chemistry', L:3,T:0,P:2,C:4, category: 'Basic Sciences' }),
-    tag({ title: 'Python Programming', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
+    tag({ title: 'Python Programming Essentials for AI', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
     tag({ title: 'Basic Electrical & Electronics / Engineering Graphics', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
     tag({ title: 'Technical English Communication', L:1,T:0,P:2,C:2, category: 'Humanities' }),
     tag({ title: 'Environmental / Management Studies', L:3,T:0,P:0,C:3, category: 'Humanities' }),
