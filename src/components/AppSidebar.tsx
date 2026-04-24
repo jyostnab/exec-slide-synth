@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { GraduationCap, Sparkles, ChevronRight } from "lucide-react";
+import { GraduationCap, Sparkles, ChevronRight, Home, Compass } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -50,6 +50,29 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
+        <SidebarGroup>
+          <SidebarGroupContent>
+            <SidebarMenu>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild isActive={path === "/"} className="text-sm">
+                  <NavLink to="/" end>
+                    <Home className="h-4 w-4" />
+                    {!collapsed && <span>Home</span>}
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild isActive={path === "/overview"} className="text-sm">
+                  <NavLink to="/overview">
+                    <Compass className="h-4 w-4" />
+                    {!collapsed && <span>Overview</span>}
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            </SidebarMenu>
+          </SidebarGroupContent>
+        </SidebarGroup>
+
         {[...REGULATIONS].reverse().map((reg) => {
           const isActiveReg = path.startsWith(`/r/${reg.id}`);
           return (
