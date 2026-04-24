@@ -54,6 +54,11 @@ export function SemesterTable({ semester, accent }: { semester: Semester; accent
                       <div className={cn("font-medium leading-snug", c.ai && "text-[hsl(var(--ai-track))]")}>
                         {c.title}
                       </div>
+                      {c.replacedTitle && (
+                        <div className="mt-0.5 text-xs text-muted-foreground line-through">
+                          {c.replacedTitle}
+                        </div>
+                      )}
                       <div className="flex flex-wrap gap-x-3 gap-y-0.5 mt-0.5">
                         {c.code && (
                           <span className="text-[10px] tracking-wider uppercase text-muted-foreground/80">
