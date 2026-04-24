@@ -32,6 +32,7 @@ export default function RegulationPage() {
   );
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
   const aiPct = totalCredits ? Math.round((totalAICredits / Number(totalCredits)) * 100) : 0;
+  const showStats = reg.id !== "r22-c22" && reg.id !== "r22-c24";
 
   return (
     <div className="px-4 sm:px-8 py-6 max-w-[1400px] mx-auto">
@@ -47,7 +48,7 @@ export default function RegulationPage() {
       {!semester && (
         <>
           {/* Stats */}
-          {(() => {
+          {showStats && (() => {
             const aiCourses = reg.semesters.flatMap(s =>
               s.courses.filter(c => c.ai).map(c => ({ ...c, sem: s.short }))
             );
