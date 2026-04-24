@@ -156,7 +156,7 @@ const R25_C26_II_II: Semester = {
     tag({ title: 'Open Elective (NPTEL)', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-I' }),
     tag({ title: 'Algorithm Design and Analysis', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-4' }),
     tag({ title: 'Machine Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-5' }),
-    tag({ title: 'Operating Systems', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core' }),
+    tag({ title: 'Full Stack Development', L:2,T:0,P:4,SL:2,C:4, category: 'Professional Core-10' }),
     tag({ title: 'Digital Logic & Computer Organization', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-7' }),
     tag({ title: 'Mini Project', C:1, category: 'Project' }),
   ],
@@ -184,7 +184,7 @@ const R25_C26_III_I: Semester = {
     tag({ title: 'Machine Learning Operations (MLOps)', L:2,T:0,P:2,SL:3,C:3, category: 'Department Elective-2' }),
     tag({ title: 'Deep Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-8' }),
     tag({ title: 'Computer Vision', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-9' }),
-    tag({ title: 'Full Stack Development', L:2,T:0,P:4,SL:2,C:4, category: 'Professional Core-10' }),
+    tag({ title: 'Operating Systems', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core' }),
     tag({ title: 'Computer Networks', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-11' }),
   ],
 };
