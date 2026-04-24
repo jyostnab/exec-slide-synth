@@ -246,7 +246,7 @@ const R22_C24_III_I: Semester = {
     tag({ code: '22TP301', title: 'Soft Skills Laboratory', L:0,T:0,P:2,C:1, category: 'Humanities' }),
     tag({ code: '24AM809', title: 'Industry Interface Course (Agentic AI Tools)', L:1,T:0,P:0,C:1, category: 'Department Elective', highlight: 'AI Adoption: Agentic AI Tools' }),
     tag({ title: 'Department Elective – 1 (Computer Vision)', L:3,T:0,P:2,C:4, category: 'Department Elective' }),
-    tag({ title: 'Department Elective – 2 (Fundamentals of Image Processing)', L:2,T:0,P:2,C:3, category: 'Department Elective' }),
+    tag({ title: 'Department Elective – 2 (MLOps)', L:2,T:0,P:2,C:3, category: 'Department Elective' }),
     tag({ title: 'Open Elective – 2 (NPTEL)', L:3,T:0,P:0,C:3, category: 'Open Elective' }),
   ],
 };
