@@ -105,6 +105,20 @@ const R25_C26_I_II: Semester = {
   ],
 };
 
+const R25_C25_I_II: Semester = {
+  id: '1-2', label: 'I Year — II Semester', short: 'I-II', totalCredits: 24,
+  courses: [
+    tag({ title: 'Mathematics – II', L:3,T:1,P:0,C:4, category: 'Basic Sciences' }),
+    tag({ title: 'Physics / Chemistry', L:3,T:0,P:2,C:4, category: 'Basic Sciences' }),
+    tag({ title: 'Python Programming', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
+    tag({ title: 'Basic Electrical & Electronics / Engineering Graphics', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
+    tag({ title: 'Technical English Communication', L:1,T:0,P:2,C:2, category: 'Humanities' }),
+    tag({ title: 'Environmental / Management Studies', L:3,T:0,P:0,C:3, category: 'Humanities' }),
+    tag({ title: 'Cyber Security', L:1,T:0,P:0,C:1, category: 'Basic Engineering' }),
+    tag({ title: 'Binary Graded Courses (4)', C:4, category: 'Binary Graded' }),
+  ],
+};
+
 const R25_C26_II_I: Semester = {
   id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 24,
   courses: [
@@ -185,7 +199,7 @@ const r25Semesters: Semester[] = [
 ];
 
 const r25C25Semesters: Semester[] = [
-  R25_C25_PRE, R25_C26_I_I, R25_C26_I_II,
+  R25_C25_PRE, R25_C26_I_I, R25_C25_I_II,
   R25_C26_II_I, R25_C26_II_II,
   R25_C26_III_I, R25_C26_III_II,
   R25_C26_IV_I, R25_C26_IV_II,
