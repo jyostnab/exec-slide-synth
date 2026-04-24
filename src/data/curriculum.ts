@@ -5,6 +5,7 @@
 export type Course = {
   code?: string;
   title: string;
+  replacedTitle?: string;
   L?: number | string;
   T?: number | string;
   P?: number | string;
@@ -133,6 +134,20 @@ const R25_C26_II_I: Semester = {
   ],
 };
 
+const R25_C25_II_I: Semester = {
+  id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 24,
+  courses: [
+    tag({ title: 'Statistical Foundations for Machine Learning', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
+    tag({ title: 'Optimization Techniques for Artificial Intelligence', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
+    tag({ title: 'Data Engineering Foundations', L:0,T:2,P:2,SL:0,C:2, category: 'Professional Core-1' }),
+    tag({ title: 'Data Structures', L:2,T:2,P:2,SL:2,C:4, category: 'Basic Engineering' }),
+    { ...tag({ title: 'Industry Interface – I²C', replacedTitle: 'Design Thinking and Engineering Orientation', L:0,T:2,P:0,SL:0,C:1, category: 'Basic Engineering', highlight: 'Agentic AI Tools' }), ai: true },
+    tag({ title: 'AI Search Methods for Problem Solving', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-2' }),
+    tag({ title: 'Database Management Systems', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-3' }),
+    tag({ title: 'Object Oriented Programming', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-6' }),
+  ],
+};
+
 const R25_C26_II_II: Semester = {
   id: '2-2', label: 'II Year — II Semester', short: 'II-II', totalCredits: 23,
   courses: [
@@ -151,7 +166,7 @@ const R25_C25_II_II: Semester = {
   id: '2-2', label: 'II Year — II Semester', short: 'II-II', totalCredits: 23,
   courses: [
     tag({ title: 'Linear Algebra for ML (Dept. Specific – Maths)', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
-    tag({ title: 'Industry Interface – I²C', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
+    tag({ title: 'Design Thinking and Engineering Orientation', replacedTitle: 'Industry Interface – I²C', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
     tag({ title: 'Open Elective (NPTEL)', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-I' }),
     tag({ title: 'Algorithm Design and Analysis', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-4' }),
     tag({ title: 'Machine Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-5' }),
@@ -214,7 +229,7 @@ const r25Semesters: Semester[] = [
 
 const r25C25Semesters: Semester[] = [
   R25_C25_PRE, R25_C26_I_I, R25_C25_I_II,
-  R25_C26_II_I, R25_C25_II_II,
+  R25_C25_II_I, R25_C25_II_II,
   R25_C26_III_I, R25_C26_III_II,
   R25_C26_IV_I, R25_C26_IV_II,
 ];
