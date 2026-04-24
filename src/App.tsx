@@ -5,6 +5,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
+import CurriculumLayout from "./components/CurriculumLayout";
+import RegulationPage from "./pages/RegulationPage";
 
 const queryClient = new QueryClient();
 
@@ -15,8 +17,11 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route element={<CurriculumLayout />}>
+            <Route path="/" element={<Index />} />
+            <Route path="/r/:regId" element={<RegulationPage />} />
+            <Route path="/r/:regId/:semId" element={<RegulationPage />} />
+          </Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
