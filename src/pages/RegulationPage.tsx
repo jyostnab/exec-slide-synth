@@ -2,7 +2,7 @@ import { useParams, NavLink } from "react-router-dom";
 import { findRegulation } from "@/data/curriculum";
 import { SemesterTable } from "@/components/SemesterTable";
 import { cn } from "@/lib/utils";
-import { ArrowRight, BookOpen, Star } from "lucide-react";
+import { ArrowRight, BookOpen, Star, MessageSquareQuote, Sparkles } from "lucide-react";
 
 const accentClass: Record<string, string> = {
   cyan: "text-primary",
