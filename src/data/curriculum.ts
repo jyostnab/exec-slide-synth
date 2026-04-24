@@ -306,7 +306,7 @@ export const REGULATIONS: Regulation[] = [
     id: 'r22-c22',
     code: 'R22-C22',
     title: 'R22 – C22 (AI Adoption)',
-    description: 'IV-Year revision adding Generative AI & LLMs and Cloud Computing for ML.',
+    description: 'IV-Year revision adding Generative AI & LLMs.',
     accent: 'cyan',
     semesters: [R22_C22_IV_I, R22_C22_IV_II],
   },
