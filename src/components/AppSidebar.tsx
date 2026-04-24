@@ -35,13 +35,13 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
       <SidebarHeader className="border-b border-sidebar-border/70">
         <div className="flex items-center gap-2 px-2 py-2">
-          <div className="h-8 w-8 rounded-md bg-primary/15 border border-primary/30 grid place-items-center">
-            <GraduationCap className="h-4 w-4 text-primary" />
+          <div className="h-9 w-9 rounded-md bg-primary/15 border border-primary/30 grid place-items-center">
+            <GraduationCap className="h-5 w-5 text-primary" />
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <div className="font-serif text-sm leading-tight text-foreground">VFSTR · CSE-AIML</div>
-              <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+              <div className="font-serif text-base leading-tight text-foreground">VFSTR · CSE-AIML</div>
+              <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
                 Curriculum Viewer
               </div>
             </div>
@@ -50,18 +50,18 @@ export function AppSidebar() {
       </SidebarHeader>
 
       <SidebarContent>
-        {REGULATIONS.map((reg) => {
+        {[...REGULATIONS].reverse().map((reg) => {
           const isActiveReg = path.startsWith(`/r/${reg.id}`);
           return (
             <SidebarGroup key={reg.id}>
-              <SidebarGroupLabel className="text-[10px] tracking-widest uppercase text-muted-foreground/80">
-                <span className={cn("inline-block h-1.5 w-1.5 rounded-full mr-2", accentDot[reg.accent])} />
+              <SidebarGroupLabel className="text-xs tracking-widest uppercase text-foreground/80 font-semibold h-8">
+                <span className={cn("inline-block h-2 w-2 rounded-full mr-2", accentDot[reg.accent])} />
                 {reg.code}
               </SidebarGroupLabel>
               <SidebarGroupContent>
                 <SidebarMenu>
                   <SidebarMenuItem>
-                    <SidebarMenuButton asChild isActive={path === `/r/${reg.id}`}>
+                    <SidebarMenuButton asChild isActive={path === `/r/${reg.id}`} className="text-sm">
                       <NavLink to={`/r/${reg.id}`} end>
                         <Sparkles className="h-4 w-4" />
                         {!collapsed && <span className="truncate">Overview</span>}
@@ -71,22 +71,32 @@ export function AppSidebar() {
 
                   {!collapsed && isActiveReg && (
                     <SidebarMenuSub>
-                      {reg.semesters.map((sem) => (
-                        <SidebarMenuSubItem key={sem.id}>
-                          <SidebarMenuSubButton
-                            asChild
-                            isActive={path === `/r/${reg.id}/${sem.id}`}
-                          >
-                            <NavLink to={`/r/${reg.id}/${sem.id}`}>
-                              <ChevronRight className="h-3 w-3 opacity-60" />
-                              <span className="truncate">{sem.label.replace(/^.+ — /, '')}</span>
-                              <span className="ml-auto text-[10px] text-muted-foreground tabular-nums">
-                                {sem.totalCredits}
-                              </span>
-                            </NavLink>
-                          </SidebarMenuSubButton>
-                        </SidebarMenuSubItem>
-                      ))}
+                      {reg.semesters.map((sem) => {
+                        // Convert "I Year — I Semester" → "I Yr - I Sem"
+                        const shortLabel = sem.label
+                          .replace(/\s*Year\s*/i, ' Yr ')
+                          .replace(/\s*Semester\s*/i, ' Sem')
+                          .replace(/—/g, '-')
+                          .replace(/\s+/g, ' ')
+                          .trim();
+                        return (
+                          <SidebarMenuSubItem key={sem.id}>
+                            <SidebarMenuSubButton
+                              asChild
+                              isActive={path === `/r/${reg.id}/${sem.id}`}
+                              className="text-sm h-8"
+                            >
+                              <NavLink to={`/r/${reg.id}/${sem.id}`}>
+                                <ChevronRight className="h-3.5 w-3.5 opacity-60" />
+                                <span className="truncate">{shortLabel}</span>
+                                <span className="ml-auto text-xs text-muted-foreground tabular-nums">
+                                  {sem.totalCredits}
+                                </span>
+                              </NavLink>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        );
+                      })}
                     </SidebarMenuSub>
                   )}
                 </SidebarMenu>
