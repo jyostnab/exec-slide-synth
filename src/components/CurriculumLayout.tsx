@@ -5,10 +5,10 @@ import vignanLogo from "@/assets/vignan-logo.png";
 
 export default function CurriculumLayout() {
   const location = useLocation();
-  const isHome = location.pathname === "/";
+  const noSidebar = location.pathname === "/" || location.pathname === "/overview";
 
-  // Home: minimal layout with no sidebar
-  if (isHome) {
+  // Home & Overview: minimal layout with no sidebar
+  if (noSidebar) {
     return (
       <div className="min-h-screen flex flex-col w-full">
         <header className="h-14 flex items-center gap-3 border-b border-border/60 px-3 sticky top-0 z-20 bg-background/80 backdrop-blur">
