@@ -58,7 +58,10 @@ const Index = () => {
             <Sparkles className="h-3.5 w-3.5" />
             Board of Studies · 2026 · Executive Brief
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground max-w-4xl">
+          <div className="text-[11px] uppercase tracking-[0.2em] text-muted-foreground font-semibold">
+            B.Tech · CSE-AIML · Course Curriculum
+          </div>
+          <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground max-w-4xl mt-2">
             Transforming the AIML Curriculum into an{" "}
             <span className="text-primary">Agentic AI</span>{" "}
             Engineering Program
@@ -68,6 +71,21 @@ const Index = () => {
             <b className="text-foreground">R25-C26</b> — that re-engineers every semester around
             Generative AI, Multi-Agentic Systems, MLOps, and Responsible AI Governance.
           </p>
+
+          {/* Presenter card */}
+          <div className="mt-6 inline-flex items-center gap-3 rounded-lg border border-primary/30 bg-primary/5 px-4 py-3">
+            <div className="h-10 w-10 rounded-full bg-primary/15 border border-primary/30 grid place-items-center">
+              <GraduationCap className="h-5 w-5 text-primary" />
+            </div>
+            <div>
+              <div className="font-serif text-base text-foreground leading-tight">
+                Dr. Jyostna Devi Bodapati
+              </div>
+              <div className="text-xs text-muted-foreground mt-0.5">
+                Associate Professor · Advanced CSE Department
+              </div>
+            </div>
+          </div>
 
           <div className="flex flex-wrap items-center gap-3 mt-7">
             <NavLink
