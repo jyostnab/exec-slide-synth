@@ -93,8 +93,9 @@ export default function RegulationPage() {
                     <div>
                       <div className="font-serif text-sm text-foreground">Prof. Arun Agarwal</div>
                       <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
-                        Senior Professor (Retd.), SCIS · Ex Pro Vice-Chancellor-1<br />
-                        University of Hyderabad
+                        B.Tech &amp; PhD (IIT Delhi), SMIEEE, FIETE, FTAS<br />
+                        Senior Professor (Retd.), School of Computer &amp; Information Sciences<br />
+                        Ex Pro Vice-Chancellor-1, University of Hyderabad
                       </div>
                     </div>
                     <span className="text-[10px] uppercase tracking-widest text-[hsl(var(--mint-accent))] font-semibold border border-[hsl(var(--mint-accent))]/40 rounded px-2 py-0.5">
@@ -102,12 +103,22 @@ export default function RegulationPage() {
                     </span>
                   </div>
                   <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
-                    "The modified curriculum already includes ML, DL, CV, NLP, GenAI, RL, MLOps,
-                    Cloud, Responsible AI and Agentic AI. To maximise long-term employability,
-                    graduates must be able to <b>build models, deploy systems, work with data, use
-                    modern AI tools, and solve real business problems</b>."
+                    "Good that many are already present. The modified curriculum already includes
+                    ML, DL, CV, NLP, GenAI, RL, MLOps, Cloud, Responsible AI and Agentic AI."
                   </p>
-                  <p className="text-[11px] text-primary italic mt-2">I approve these changes.</p>
+                  <div className="text-[11px] text-muted-foreground mt-3 mb-1 uppercase tracking-widest font-semibold">
+                    Suggestions — five things every graduate must do:
+                  </div>
+                  <ol className="text-xs text-foreground/85 leading-relaxed list-decimal list-inside space-y-0.5">
+                    <li>Build models</li>
+                    <li>Deploy systems</li>
+                    <li>Work with data</li>
+                    <li>Use modern AI tools</li>
+                    <li>Solve real business / industry problems</li>
+                  </ol>
+                  <p className="text-[11px] text-primary italic mt-3">
+                    Recommendation: I approve these changes.
+                  </p>
                 </div>
 
                 {/* Prof. R.B.V. Subramanyam */}
