@@ -20,8 +20,12 @@ const Index = () => {
               className="h-16 sm:h-20 w-auto object-contain mx-auto bg-white rounded-md px-3 py-1.5 shadow-md"
             />
 
+            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mt-7">
+              Curriculum Revision
+            </div>
+
             {/* Title */}
-            <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-8">
+            <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-3">
               VFSTR <span className="text-primary">Agentic AI</span> Transformation
             </h1>
 
