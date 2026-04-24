@@ -1,27 +1,6 @@
 import { NavLink } from "react-router-dom";
-import { REGULATIONS } from "@/data/curriculum";
-import { cn } from "@/lib/utils";
-import { ArrowRight, Sparkles, GraduationCap, Star, Compass } from "lucide-react";
+import { ArrowRight, Sparkles, GraduationCap, Compass } from "lucide-react";
 import vignanLogo from "@/assets/vignan-logo.png";
-
-const accentText: Record<string, string> = {
-  cyan: "text-primary",
-  amber: "text-[hsl(var(--ai-track))]",
-  violet: "text-[hsl(var(--violet-accent))]",
-  mint: "text-[hsl(var(--mint-accent))]",
-};
-const accentBorder: Record<string, string> = {
-  cyan: "hover:border-primary/60",
-  amber: "hover:border-[hsl(var(--ai-track))]/60",
-  violet: "hover:border-[hsl(var(--violet-accent))]/60",
-  mint: "hover:border-[hsl(var(--mint-accent))]/60",
-};
-const accentDot: Record<string, string> = {
-  cyan: "bg-primary",
-  amber: "bg-[hsl(var(--ai-track))]",
-  violet: "bg-[hsl(var(--violet-accent))]",
-  mint: "bg-[hsl(var(--mint-accent))]",
-};
 
 const Index = () => {
   return (
@@ -41,12 +20,8 @@ const Index = () => {
               className="h-16 sm:h-20 w-auto object-contain mx-auto bg-white rounded-md px-3 py-1.5 shadow-md"
             />
 
-            <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mt-7">
-              University AI Adoption · Curriculum Revision
-            </div>
-
             {/* Title */}
-            <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-3">
+            <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-8">
               VFSTR <span className="text-primary">Agentic AI</span> Transformation
             </h1>
 
@@ -93,41 +68,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        {/* REGULATION QUICK-NAV */}
-        <div className="mt-6">
-          <div className="text-[11px] uppercase tracking-[0.25em] text-muted-foreground text-center mb-3">
-            Or jump directly to a regulation
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            {[...REGULATIONS].reverse().map((r) => {
-              const aiCount = r.semesters.flatMap(s => s.courses).filter(c => c.ai).length;
-              return (
-                <NavLink
-                  key={r.id}
-                  to={`/r/${r.id}`}
-                  className={cn("group glass-card p-4 transition-colors", accentBorder[r.accent])}
-                >
-                  <div className="flex items-center gap-2 mb-2">
-                    <div className={cn("h-2 w-2 rounded-full", accentDot[r.accent])} />
-                    <span className={cn("text-[11px] uppercase tracking-widest font-semibold", accentText[r.accent])}>
-                      {r.code}
-                    </span>
-                  </div>
-                  <div className="flex items-center justify-between text-[11px] text-muted-foreground">
-                    <span>{r.semesters.length} sem</span>
-                    <span className="flex items-center gap-1 text-[hsl(var(--ai-track))]">
-                      <Star className="h-3 w-3 fill-current" /> {aiCount}
-                    </span>
-                  </div>
-                  <div className="mt-2 flex items-center gap-1 text-xs text-foreground/80 group-hover:text-primary transition-colors">
-                    Open <ArrowRight className="h-3 w-3" />
-                  </div>
-                </NavLink>
-              );
-            })}
-          </div>
-        </div>
       </div>
     </div>
   );
