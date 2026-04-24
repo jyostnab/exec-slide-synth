@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { GraduationCap, Sparkles, ChevronRight, Home, Compass } from "lucide-react";
+import { Sparkles, ChevronRight, Home, Compass } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
