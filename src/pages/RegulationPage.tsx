@@ -47,8 +47,11 @@ export default function RegulationPage() {
       {!semester && (
         <>
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6">
-            {[
+          {(() => {
+            const aiCourses = reg.semesters.flatMap(s =>
+              s.courses.filter(c => c.ai).map(c => ({ ...c, sem: s.short }))
+            );
+            const stats = [
               {
                 label: "Semesters",
                 value: reg.semesters.some(s => s.id === 'pre')
@@ -56,22 +59,72 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: totalAI, accent: true },
-              { label: "AI / ML Credits", value: totalAICredits, accent: true },
+              { label: "AI / ML Courses", value: totalAI, accent: true, hover: true },
+              { label: "AI / ML Credits", value: totalAICredits, accent: true, hover: true },
               { label: "AI / ML %", value: `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
-            ].map((s) => (
-              <div key={s.label} className="glass-card px-4 py-3">
-                <div className="text-[10px] uppercase tracking-widest text-muted-foreground">{s.label}</div>
-                <div className={cn(
-                  "font-serif text-2xl mt-1 tabular-nums",
-                  s.accent ? "text-[hsl(var(--ai-track))]" : "text-foreground"
-                )}>
-                  {s.value}
-                </div>
+            ];
+            return (
+              <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6">
+                {stats.map((s) => {
+                  const card = (
+                    <div
+                      className={cn(
+                        "glass-card px-4 py-3 h-full",
+                        s.hover && "cursor-help hover:border-primary/50 transition-colors"
+                      )}
+                    >
+                      <div className="text-[10px] uppercase tracking-widest text-muted-foreground">
+                        {s.label}
+                      </div>
+                      <div
+                        className={cn(
+                          "font-serif text-2xl mt-1 tabular-nums",
+                          s.accent ? "text-[hsl(var(--ai-track))]" : "text-foreground"
+                        )}
+                      >
+                        {s.value}
+                      </div>
+                    </div>
+                  );
+                  if (!s.hover) return <div key={s.label}>{card}</div>;
+                  return (
+                    <HoverCard key={s.label} openDelay={80} closeDelay={80}>
+                      <HoverCardTrigger asChild>{card}</HoverCardTrigger>
+                      <HoverCardContent className="w-96 p-0 border-primary/30">
+                        <div className="px-4 py-2 border-b border-border/60 flex items-center justify-between">
+                          <div className="text-[11px] uppercase tracking-widest text-[hsl(var(--ai-track))] font-semibold">
+                            AI / ML Courses
+                          </div>
+                          <div className="text-[11px] text-muted-foreground tabular-nums">
+                            {aiCourses.length} courses · {totalAICredits} credits
+                          </div>
+                        </div>
+                        <ul className="max-h-80 overflow-y-auto divide-y divide-border/40">
+                          {aiCourses.map((c, i) => (
+                            <li
+                              key={`${c.title}-${i}`}
+                              className="px-4 py-2 flex items-start gap-3 text-xs"
+                            >
+                              <span className="text-[10px] font-mono text-muted-foreground mt-0.5 w-10 shrink-0">
+                                {c.sem}
+                              </span>
+                              <span className="flex-1 text-foreground/90 leading-snug">
+                                {c.title}
+                              </span>
+                              <span className="text-[hsl(var(--ai-track))] font-semibold tabular-nums shrink-0">
+                                {c.C}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </HoverCardContent>
+                    </HoverCard>
+                  );
+                })}
               </div>
-            ))}
-          </div>
+            );
+          })()}
 
           {/* BoS Comments — only on R25-C26 */}
           {reg.id === 'r25-c26' && (
