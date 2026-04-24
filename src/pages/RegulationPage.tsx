@@ -60,24 +60,106 @@ export default function RegulationPage() {
 
           {/* BoS Comments — only on R25-C26 */}
           {reg.id === 'r25-c26' && (
-            <div className="glass-card p-5 mb-6 border-primary/30">
-              <div className="flex items-center gap-2 mb-2">
+            <div className="glass-card p-6 mb-6 border-primary/30">
+              <div className="flex items-center gap-2 mb-3">
                 <MessageSquareQuote className="h-4 w-4 text-primary" />
                 <h3 className="text-xs uppercase tracking-[0.2em] text-primary font-semibold">
-                  Board of Studies — Revision Note
+                  Board of Studies — Approvals & Comments
                 </h3>
               </div>
-              <p className="text-sm text-foreground/90 leading-relaxed">
+              <p className="text-sm text-foreground/90 leading-relaxed mb-5">
                 As part of the university-wide transition into an{" "}
-                <b className="text-primary">Agentic AI University</b>, the R25-C26 curriculum has
-                been comprehensively revised. The Board of Studies has restructured every semester
-                to embed Generative AI, Multi-Agentic Systems, MLOps, and Responsible AI practices
-                from the Pre-Semester through the Capstone — ensuring graduates are industry-ready
-                AI Systems Engineers.
+                <b className="text-primary">Agentic AI University</b>, the CSE-AIML Board of Studies
+                meeting (07-02-2026) revised the R25 Course Structure to incorporate{" "}
+                <i>Artificial Intelligence Adoption Levels (1, 2, 3, 4)</i> across all four years.
+                Subjects and credits have been revised while keeping total credits per semester
+                unchanged. The following members have approved the revised structure:
               </p>
-              <p className="text-xs text-muted-foreground italic mt-3">
-                Detailed BoS comments to be appended on receipt of the official upload.
-              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                {/* Prof. Arun Agarwal */}
+                <div className="rounded-lg border border-border/60 bg-background/40 p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="font-serif text-sm text-foreground">Prof. Arun Agarwal</div>
+                      <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
+                        Senior Professor (Retd.), SCIS · Ex Pro Vice-Chancellor-1<br />
+                        University of Hyderabad
+                      </div>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-[hsl(var(--mint-accent))] font-semibold border border-[hsl(var(--mint-accent))]/40 rounded px-2 py-0.5">
+                      Approved
+                    </span>
+                  </div>
+                  <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
+                    "The modified curriculum already includes ML, DL, CV, NLP, GenAI, RL, MLOps,
+                    Cloud, Responsible AI and Agentic AI. To maximise long-term employability,
+                    graduates must be able to <b>build models, deploy systems, work with data, use
+                    modern AI tools, and solve real business problems</b>."
+                  </p>
+                  <p className="text-[11px] text-primary italic mt-2">I approve these changes.</p>
+                </div>
+
+                {/* Prof. R.B.V. Subramanyam */}
+                <div className="rounded-lg border border-border/60 bg-background/40 p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="font-serif text-sm text-foreground">Prof. R. Bala Venkata Subramanyam</div>
+                      <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
+                        M.Tech, Ph.D (IIT Kgp) · Professor, CSE<br />
+                        NIT Warangal
+                      </div>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-[hsl(var(--mint-accent))] font-semibold border border-[hsl(var(--mint-accent))]/40 rounded px-2 py-0.5">
+                      Approved
+                    </span>
+                  </div>
+                  <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
+                    "Dr. P. Seetha Lakshmi garu, I hereby approve the modifications in the course
+                    structure."
+                  </p>
+                </div>
+
+                {/* Dr. D S Guru */}
+                <div className="rounded-lg border border-border/60 bg-background/40 p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="font-serif text-sm text-foreground">Dr. D. S. Guru</div>
+                      <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
+                        Senior Professor, DoS in Computer Science<br />
+                        Member, DEB-UGC · Expert Committee, UGC-NET
+                      </div>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-[hsl(var(--mint-accent))] font-semibold border border-[hsl(var(--mint-accent))]/40 rounded px-2 py-0.5">
+                      Approved
+                    </span>
+                  </div>
+                  <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
+                    "I have my approval."
+                  </p>
+                </div>
+
+                {/* Member Secretary */}
+                <div className="rounded-lg border border-primary/40 bg-primary/5 p-4">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <div className="font-serif text-sm text-foreground">Dr. P. Seethalakshmi</div>
+                      <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
+                        Member Secretary, CSE-AIML R25 Course Structure<br />
+                        Assistant Professor, ACSE Department · VFSTR
+                      </div>
+                    </div>
+                    <span className="text-[10px] uppercase tracking-widest text-primary font-semibold border border-primary/50 rounded px-2 py-0.5">
+                      Proposed
+                    </span>
+                  </div>
+                  <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
+                    "Management has decided to include <i>Artificial Intelligence Adoption Levels
+                    (1, 2, 3, 4)</i> across all four years of the program. Some subjects and
+                    credits have been revised; however, total credits per semester remain unchanged."
+                  </p>
+                </div>
+              </div>
             </div>
           )}
 
