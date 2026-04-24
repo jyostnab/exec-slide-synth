@@ -79,8 +79,9 @@ export default function RegulationPage() {
               </div>
               <p className="text-sm text-foreground/90 leading-relaxed mb-5">
                 As part of the university-wide transition into an{" "}
-                <b className="text-primary">Agentic AI University</b>, the CSE-AIML Board of Studies
-                meeting (07-02-2026) revised the R25 Course Structure to incorporate{" "}
+                <b className="text-primary">Agentic AI University</b>, the CSE-AIML curriculum
+                was revised and a mail was sent to the BoS members for their inputs and
+                suggestions on the <b>R25-C26 Course Structure</b>, incorporating{" "}
                 <i>Artificial Intelligence Adoption Levels (1, 2, 3, 4)</i> across all four years.
                 Subjects and credits have been revised while keeping total credits per semester
                 unchanged. The following members have approved the revised structure:
