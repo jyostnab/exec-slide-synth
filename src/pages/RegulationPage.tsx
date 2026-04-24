@@ -42,7 +42,7 @@ export default function RegulationPage() {
       {!semester && (
         <>
           {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
+          <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6">
             {[
               {
                 label: "Semesters",
@@ -51,7 +51,8 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: `${totalAI} · ${totalAICredits} cr`, accent: true },
+              { label: "AI / ML Courses", value: totalAI, accent: true },
+              { label: "AI / ML Credits", value: totalAICredits, accent: true },
               { label: "AI / ML %", value: `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ].map((s) => (
