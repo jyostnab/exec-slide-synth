@@ -40,9 +40,9 @@ export function AppSidebar() {
           </div>
           {!collapsed && (
             <div className="min-w-0">
-              <div className="font-serif text-base leading-tight text-foreground">VFSTR · CSE-AIML</div>
+              <div className="font-serif text-base leading-tight text-foreground">VFSTR</div>
               <div className="text-[11px] uppercase tracking-widest text-muted-foreground">
-                Curriculum Viewer
+                B.Tech CSE-AIML
               </div>
             </div>
           )}

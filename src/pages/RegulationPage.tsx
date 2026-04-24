@@ -115,8 +115,7 @@ export default function RegulationPage() {
                     </span>
                   </div>
                   <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
-                    "Dr. P. Seetha Lakshmi garu, I hereby approve the modifications in the course
-                    structure."
+                    "I hereby approve the modifications in the course structure."
                   </p>
                 </div>
 
@@ -127,7 +126,7 @@ export default function RegulationPage() {
                       <div className="font-serif text-sm text-foreground">Dr. D. S. Guru</div>
                       <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
                         Senior Professor, DoS in Computer Science<br />
-                        Member, DEB-UGC · Expert Committee, UGC-NET
+                        University of Mysore · Expert Committee Member, UGC-NET
                       </div>
                     </div>
                     <span className="text-[10px] uppercase tracking-widest text-[hsl(var(--mint-accent))] font-semibold border border-[hsl(var(--mint-accent))]/40 rounded px-2 py-0.5">
@@ -136,27 +135,6 @@ export default function RegulationPage() {
                   </div>
                   <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
                     "I have my approval."
-                  </p>
-                </div>
-
-                {/* Member Secretary */}
-                <div className="rounded-lg border border-primary/40 bg-primary/5 p-4">
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <div className="font-serif text-sm text-foreground">Dr. P. Seethalakshmi</div>
-                      <div className="text-[11px] text-muted-foreground leading-tight mt-0.5">
-                        Member Secretary, CSE-AIML R25 Course Structure<br />
-                        Assistant Professor, ACSE Department · VFSTR
-                      </div>
-                    </div>
-                    <span className="text-[10px] uppercase tracking-widest text-primary font-semibold border border-primary/50 rounded px-2 py-0.5">
-                      Proposed
-                    </span>
-                  </div>
-                  <p className="text-xs text-foreground/85 mt-3 leading-relaxed">
-                    "Management has decided to include <i>Artificial Intelligence Adoption Levels
-                    (1, 2, 3, 4)</i> across all four years of the program. Some subjects and
-                    credits have been revised; however, total credits per semester remain unchanged."
                   </p>
                 </div>
               </div>
