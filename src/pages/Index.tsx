@@ -42,12 +42,12 @@ const Index = () => {
             />
 
             <div className="text-xs uppercase tracking-[0.3em] text-primary font-semibold mt-7">
-              University AI Adoption
+              University AI Adoption · Curriculum Revision
             </div>
 
             {/* Title */}
             <h1 className="font-serif text-3xl sm:text-5xl leading-tight text-foreground mt-3">
-              Curriculum <span className="text-primary">Revision</span>
+              VFSTR <span className="text-primary">Agentic AI</span> Transformation
             </h1>
 
             <p className="text-sm sm:text-lg text-foreground/90 mt-4 max-w-2xl mx-auto leading-relaxed">
