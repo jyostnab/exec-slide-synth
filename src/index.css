@@ -6,62 +6,64 @@
 
 @layer base {
   :root {
-    --background: 210 40% 98%;
-    --foreground: 222 47% 14%;
+    /* Dark navy executive theme — based on #0b1a35 */
+    --background: 219 65% 12%;
+    --foreground: 215 38% 92%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222 47% 14%;
+    --card: 219 55% 16%;
+    --card-foreground: 215 38% 92%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 14%;
+    --popover: 219 55% 16%;
+    --popover-foreground: 215 38% 92%;
 
-    --primary: 222 80% 32%;             /* deep navy */
-    --primary-foreground: 210 40% 99%;
+    --primary: 244 100% 72%;            /* violet #7b6fff */
+    --primary-foreground: 219 65% 12%;
 
-    --secondary: 214 45% 94%;
-    --secondary-foreground: 222 47% 18%;
+    --secondary: 219 45% 22%;
+    --secondary-foreground: 215 38% 92%;
 
-    --muted: 214 35% 95%;
-    --muted-foreground: 218 18% 40%;
+    --muted: 219 40% 20%;
+    --muted-foreground: 217 30% 70%;
 
-    --accent: 199 90% 48%;              /* bright sky blue accent */
-    --accent-foreground: 222 47% 14%;
+    --accent: 190 100% 50%;             /* cyan #00d4ff */
+    --accent-foreground: 219 65% 12%;
 
-    --destructive: 0 75% 52%;
-    --destructive-foreground: 210 40% 99%;
+    --destructive: 0 75% 60%;
+    --destructive-foreground: 215 38% 96%;
 
-    --border: 214 30% 88%;
-    --input: 214 30% 88%;
-    --ring: 222 80% 42%;
+    --border: 219 40% 28%;
+    --input: 219 40% 28%;
+    --ring: 244 100% 72%;
 
     --radius: 0.6rem;
 
     /* AI track / categories */
-    --ai-track: 199 90% 42%;
-    --violet-accent: 250 60% 52%;
-    --mint-accent: 168 65% 36%;
+    --ai-track: 51 100% 50%;            /* gold #ffd700 */
+    --violet-accent: 244 100% 72%;
+    --mint-accent: 168 70% 55%;
 
-    /* Sidebar */
-    --sidebar-background: 222 60% 18%;
-    --sidebar-foreground: 210 30% 95%;
-    --sidebar-primary: 199 90% 60%;
-    --sidebar-primary-foreground: 222 60% 14%;
-    --sidebar-accent: 222 45% 26%;
-    --sidebar-accent-foreground: 210 30% 95%;
-    --sidebar-border: 222 40% 28%;
-    --sidebar-ring: 199 90% 60%;
+    /* Sidebar — same family */
+    --sidebar-background: 219 70% 10%;
+    --sidebar-foreground: 215 30% 88%;
+    --sidebar-primary: 244 100% 72%;
+    --sidebar-primary-foreground: 219 65% 10%;
+    --sidebar-accent: 219 50% 20%;
+    --sidebar-accent-foreground: 215 38% 92%;
+    --sidebar-border: 219 45% 22%;
+    --sidebar-ring: 190 100% 60%;
 
-    /* Decorative gradients — clean, soft navy/sky */
-    --gradient-bg: radial-gradient(1100px 550px at -10% -10%, hsl(210 80% 92%), transparent 60%),
-                   radial-gradient(900px 500px at 110% 0%, hsl(220 70% 94%), transparent 55%),
-                   linear-gradient(180deg, hsl(210 40% 98%), hsl(214 50% 95%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100% / 0.95), hsl(214 45% 98% / 0.92));
-    --shadow-elev: 0 12px 32px -16px hsl(222 60% 25% / 0.18);
+    /* Decorative gradients — deep navy with subtle violet/cyan glow */
+    --gradient-bg: radial-gradient(1200px 600px at 20% 10%, hsl(220 70% 25% / 0.55), transparent 60%),
+                   radial-gradient(900px 500px at 80% 90%, hsl(190 90% 25% / 0.30), transparent 60%),
+                   radial-gradient(700px 400px at 50% 50%, hsl(244 80% 30% / 0.25), transparent 70%),
+                   linear-gradient(180deg, hsl(219 65% 11%), hsl(219 70% 9%));
+    --gradient-card: linear-gradient(180deg, hsl(219 55% 18% / 0.85), hsl(219 60% 14% / 0.85));
+    --shadow-elev: 0 14px 36px -16px hsl(219 90% 4% / 0.55);
   }
 
   .dark {
-    --background: 215 45% 14%;
-    --foreground: 210 30% 97%;
+    --background: 219 65% 12%;
+    --foreground: 215 38% 92%;
   }
 }
 
