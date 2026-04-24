@@ -11,17 +11,6 @@ export default function CurriculumLayout() {
   if (noSidebar) {
     return (
       <div className="min-h-screen flex flex-col w-full">
-        <header className="h-14 flex items-center gap-3 border-b border-border/60 px-3 sticky top-0 z-20 bg-background/80 backdrop-blur">
-          <img
-            src={vignanLogo}
-            alt="Vignan's Foundation for Science, Technology & Research"
-            className="h-9 w-auto object-contain bg-white/95 rounded px-2 py-0.5"
-          />
-          <div className="hidden sm:block h-5 w-px bg-border mx-1" />
-          <h1 className="hidden sm:block font-serif text-sm text-foreground">
-            B.Tech CSE-AIML — Curriculum
-          </h1>
-        </header>
         <main className="flex-1 min-w-0 overflow-x-hidden">
           <Outlet />
         </main>
