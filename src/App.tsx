@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import CurriculumLayout from "./components/CurriculumLayout";
 import RegulationPage from "./pages/RegulationPage";
+import Overview from "./pages/Overview";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +20,7 @@ const App = () => (
         <Routes>
           <Route element={<CurriculumLayout />}>
             <Route path="/" element={<Index />} />
+            <Route path="/overview" element={<Overview />} />
             <Route path="/r/:regId" element={<RegulationPage />} />
             <Route path="/r/:regId/:semId" element={<RegulationPage />} />
           </Route>
