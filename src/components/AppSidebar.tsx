@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/sidebar";
 import { REGULATIONS } from "@/data/curriculum";
 import { cn } from "@/lib/utils";
+import vignanLogo from "@/assets/vignan-logo.png";
 
 const accentDot: Record<string, string> = {
   cyan: "bg-primary",
@@ -35,8 +36,12 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
       <SidebarHeader className="border-b border-sidebar-border/70">
         <div className="flex items-center gap-2 px-2 py-2">
-          <div className="h-9 w-9 rounded-md bg-primary/15 border border-primary/30 grid place-items-center">
-            <GraduationCap className="h-5 w-5 text-primary" />
+          <div className="h-9 w-9 rounded-md border border-sidebar-border/70 bg-background grid place-items-center overflow-hidden">
+            <img
+              src={vignanLogo}
+              alt="VFSTR logo"
+              className="h-7 w-7 object-contain"
+            />
           </div>
           {!collapsed && (
             <div className="min-w-0">
