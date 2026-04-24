@@ -34,15 +34,19 @@ export type Regulation = {
 };
 
 const aiKeywords = [
-  'AI', 'Artificial Intelligence', 'Machine Learning', 'Deep Learning',
-  'Neural', 'NLP', 'Natural Language', 'Computer Vision', 'Reinforcement',
-  'Generative', 'Agentic', 'LLM', 'MLOps', 'Big Data', 'Data Engineering',
-  'Data Visualization', 'Data Science', 'Statistical Foundations', 'Optimization Techniques',
+  'Artificial Intelligence', 'Machine Learning', 'Deep Learning',
+  'Neural Network', 'NLP', 'Natural Language', 'Computer Vision', 'Reinforcement Learning',
+  'Generative AI', 'Agentic', 'LLM', 'MLOps', 'Big Data', 'Data Engineering',
+  'Data Visualization', 'Data Science', 'Optimization Techniques',
   'Linear Algebra for ML', 'Search Methods', 'Cloud Computing for AI',
-  'AI Governance', 'Multi-Agentic', 'Python Programming', 'Agentic AI Tools',
-  'Prompt', 'Capstone', 'Text Mining', 'Knowledge Representation', 'Reasoning',
+  'AI Governance', 'Multi-Agentic', 'Agentic AI Tools', 'AI Tools',
+  'Prompt Engineering', 'Text Mining', 'Knowledge Representation',
 ];
-const isAI = (t: string) => aiKeywords.some(k => t.toLowerCase().includes(k.toLowerCase()));
+// Use word-boundary matching for short tokens like "AI" / "ML" to avoid false positives
+const aiTokenRegex = /\b(AI|ML)\b/i;
+const isAI = (t: string) =>
+  aiTokenRegex.test(t) ||
+  aiKeywords.some(k => t.toLowerCase().includes(k.toLowerCase()));
 
 const tag = (c: Omit<Course, 'ai'>): Course => ({ ...c, ai: isAI(c.title) });
 
