@@ -21,6 +21,10 @@ export default function RegulationPage() {
 
   const totalCourses = reg.semesters.reduce((a, s) => a + s.courses.length, 0);
   const totalAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
+  const totalAICredits = reg.semesters.reduce(
+    (a, s) => a + s.courses.filter(c => c.ai).reduce((b, c) => b + Number(c.C || 0), 0),
+    0,
+  );
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
   const aiPct = totalCourses ? Math.round((totalAI / totalCourses) * 100) : 0;
 
