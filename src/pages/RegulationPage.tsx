@@ -40,7 +40,12 @@ export default function RegulationPage() {
           {/* Stats */}
           <div className="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-6">
             {[
-              { label: "Semesters", value: reg.semesters.length },
+              {
+                label: "Semesters",
+                value: reg.semesters.some(s => s.id === 'pre')
+                  ? `${reg.semesters.length - 1} + presem`
+                  : reg.semesters.length,
+              },
               { label: "Courses", value: totalCourses },
               { label: "AI / ML Courses", value: totalAI, accent: true },
               { label: "AI / ML %", value: `${aiPct}%`, accent: true },
