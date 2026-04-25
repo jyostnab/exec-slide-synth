@@ -64,10 +64,20 @@ const R25_C26_PRE: Semester = {
   ],
 };
 
-const R25_C25_PRE: Semester = {
-  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 3,
+const R25_C25_INDUCTION: Semester = {
+  id: 'induction', label: 'I Year — Induction Program', short: 'Ind', totalCredits: 1,
   courses: [
-    tag({ code: '25SA101', title: 'Orientation Program (Induction Program)', L:0, T:2, P:0, SL:0, C: 1, category: 'Binary Graded' }),
+    tag({ title: 'Orientation Program (Induction Program)', C: 1, category: 'Binary Graded' }),
+  ],
+};
+
+const R25_C25_PRE: Semester = {
+  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 6,
+  courses: [
+    tag({ title: 'Mathematics', C: 1, category: 'Basic Sciences' }),
+    tag({ title: 'English Communication', C: 1, category: 'Humanities' }),
+    tag({ title: 'Quantitative Aptitude and Logical Reasoning', C: 1, category: 'Humanities' }),
+    tag({ title: 'IT Tools', C: 1, category: 'Basic Engineering' }),
     tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
     tag({ title: 'Binary Graded Course – 2', C: 1, category: 'Binary Graded' }),
   ],
