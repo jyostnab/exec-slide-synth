@@ -292,8 +292,18 @@ export default function RegulationPage() {
                 <h2 className="text-xs uppercase tracking-widest text-muted-foreground">Jump to Semester</h2>
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
-                {reg.semesters.map((s) => {
+                {reg.semesters.filter(s => s.id !== 'induction').map((s) => {
                   const aiCount = s.courses.filter(c => c.ai || isAppliedAI(c)).length;
+                  // Combine induction credits/courses into the pre card (R25-C25)
+                  const induction = s.id === 'pre'
+                    ? reg.semesters.find(x => x.id === 'induction')
+                    : undefined;
+                  const displayCredits = induction
+                    ? Number(s.totalCredits) + Number(induction.totalCredits)
+                    : s.totalCredits;
+                  const displayCourses = induction
+                    ? s.courses.length + induction.courses.length
+                    : s.courses.length;
                   return (
                     <NavLink
                       key={s.id}
@@ -305,13 +315,14 @@ export default function RegulationPage() {
                           <div className={cn("text-[10px] uppercase tracking-widest", accent)}>{s.short}</div>
                           <div className="font-serif text-base mt-1 text-foreground leading-tight">
                             {s.label.replace(/^.+ — /, '')}
+                            {induction && <span className="text-muted-foreground"> + Induction</span>}
                           </div>
                         </div>
                         <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
                       </div>
                       <div className="mt-3 flex items-center gap-3 text-xs text-muted-foreground">
-                        <span className="tabular-nums"><b className="text-foreground">{s.totalCredits}</b> credits</span>
-                        <span className="tabular-nums">{s.courses.length} courses</span>
+                        <span className="tabular-nums"><b className="text-foreground">{displayCredits}</b> credits</span>
+                        <span className="tabular-nums">{displayCourses} courses</span>
                         {aiCount > 0 && (
                           <span className="flex items-center gap-1 text-[hsl(var(--ai-track))]">
                             <Star className="h-3 w-3 fill-current" />
@@ -328,18 +339,30 @@ export default function RegulationPage() {
 
           {/* All semesters stacked */}
           <div className="space-y-6">
-            {reg.semesters.map((s) => (
-              <SemesterTable key={s.id} semester={s} accent={accent} />
-            ))}
+            {reg.semesters.filter(s => s.id !== 'induction').map((s) => {
+              const induction = s.id === 'pre' ? reg.semesters.find(x => x.id === 'induction') : undefined;
+              return (
+                <div key={s.id} className="space-y-6">
+                  {induction && <SemesterTable semester={induction} accent={accent} />}
+                  <SemesterTable semester={s} accent={accent} />
+                </div>
+              );
+            })}
           </div>
         </>
       )}
 
-      {semester && (
-        <div className="space-y-4">
-          <SemesterTable semester={semester} accent={accent} />
-        </div>
-      )}
+      {semester && (() => {
+        const induction = semester.id === 'pre'
+          ? reg.semesters.find(s => s.id === 'induction')
+          : undefined;
+        return (
+          <div className="space-y-6">
+            {induction && <SemesterTable semester={induction} accent={accent} />}
+            <SemesterTable semester={semester} accent={accent} />
+          </div>
+        );
+      })()}
     </div>
   );
 }

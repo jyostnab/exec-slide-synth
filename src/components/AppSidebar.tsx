@@ -99,7 +99,7 @@ export function AppSidebar() {
 
                   {!collapsed && isActiveReg && (
                     <SidebarMenuSub>
-                      {reg.semesters.map((sem) => {
+                      {reg.semesters.filter(s => s.id !== 'induction').map((sem) => {
                         // Convert "I Year — I Semester" → "I Yr - I Sem"
                         const shortLabel = sem.label
                           .replace(/\s*Year\s*/i, ' Yr ')
