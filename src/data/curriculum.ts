@@ -193,7 +193,7 @@ const R25_C26_III_II: Semester = {
   id: '3-2', label: 'III Year — II Semester', short: 'III-II', totalCredits: 20,
   courses: [
     tag({ title: 'Professional Communication Skills', L:0,T:0,P:2,C:1, category: 'Humanities' }),
-    tag({ title: 'Cloud Computing', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-3' }),
+    { ...tag({ title: 'Dept Elective (Generative and Agentic Systems)', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-3' }), ai: true, highlight: 'Generative AI & Agentic Systems' },
     tag({ title: 'Cloud Computing for AI', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-4' }),
     tag({ title: 'NPTEL / Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-2' }),
     tag({ title: 'Natural Language Processing', L:2,T:0,P:2,SL:2,C:4, category: 'Professional Core-13' }),
