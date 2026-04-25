@@ -332,7 +332,7 @@ export const REGULATIONS: Regulation[] = [
     id: 'r25-c25',
     code: 'R25-C25',
     title: 'R25 – C25 Course Structure',
-    description: 'Full 4-year R25 regulation with Agentic AI Tools from pre-semester onward.',
+    description: '',
     accent: 'violet',
     semesters: r25C25Semesters,
   },
