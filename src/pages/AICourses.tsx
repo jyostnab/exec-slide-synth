@@ -24,10 +24,6 @@ export default function AICourses() {
         <h1 className="font-serif text-2xl sm:text-3xl text-foreground mt-1">
           AI / ML Courses — Semester-wise
         </h1>
-        <p className="text-sm text-muted-foreground mt-1 max-w-3xl">
-          All courses explicitly tagged as AI / Machine Learning across the latest
-          regulations, grouped by semester.
-        </p>
       </div>
 
       <div className="space-y-8">
