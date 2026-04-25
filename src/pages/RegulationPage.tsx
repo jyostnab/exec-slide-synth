@@ -24,12 +24,36 @@ export default function RegulationPage() {
   const accent = accentClass[reg.accent];
   const semester = semId ? reg.semesters.find(s => s.id === semId) : null;
 
+  // Courses that count toward AI/ML credits "by application" (projects, I²C, work-in-lieu)
+  // even though they are not explicitly tagged as AI courses.
+  const isAppliedAI = (c: { title?: string; category?: string; ai?: boolean }) => {
+    if (c.ai) return false;
+    const t = `${c.title || ''} ${c.category || ''}`.toLowerCase();
+    return (
+      t.includes('project') ||
+      t.includes('internship') ||
+      t.includes('capstone') ||
+      t.includes('industry interface') ||
+      t.includes('i²c') ||
+      t.includes('i2c') ||
+      t.includes('work-in-lieu') ||
+      t.includes('work in lieu')
+    );
+  };
+
   const totalCourses = reg.semesters.reduce((a, s) => a + s.courses.length, 0);
-  const totalAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
-  const totalAICredits = reg.semesters.reduce(
+  const explicitAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
+  const appliedAI = reg.semesters.reduce((a, s) => a + s.courses.filter(isAppliedAI).length, 0);
+  const totalAI = explicitAI + appliedAI;
+  const explicitAICredits = reg.semesters.reduce(
     (a, s) => a + s.courses.filter(c => c.ai).reduce((b, c) => b + Number(c.C || 0), 0),
     0,
   );
+  const appliedAICredits = reg.semesters.reduce(
+    (a, s) => a + s.courses.filter(isAppliedAI).reduce((b, c) => b + Number(c.C || 0), 0),
+    0,
+  );
+  const totalAICredits = explicitAICredits + appliedAICredits;
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
   const aiPct = totalCredits ? Math.round((totalAICredits / Number(totalCredits)) * 100) : 0;
   const showStats = reg.id !== "r22-c22" && reg.id !== "r22-c24";
