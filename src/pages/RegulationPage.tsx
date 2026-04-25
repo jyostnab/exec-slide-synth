@@ -88,9 +88,9 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: hasApplied ? `${totalAI}*` : totalAI, accent: true, hover: true },
-              { label: "AI / ML Credits", value: hasApplied ? `${totalAICredits}*` : totalAICredits, accent: true, hover: true },
-              { label: "AI / ML %", value: hasApplied ? `${aiPct}%*` : `${aiPct}%`, accent: true },
+              { label: "AI / ML Courses", value: hasApplied ? `${explicitAI} (${totalAI})` : explicitAI, accent: true, hover: true },
+              { label: "AI / ML Credits", value: hasApplied ? `${explicitAICredits} (${totalAICredits})` : explicitAICredits, accent: true, hover: true },
+              { label: "AI / ML %", value: hasApplied ? `${Math.round((explicitAICredits / Number(totalCredits)) * 100)}% (${aiPct}%)` : `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ];
             return (
