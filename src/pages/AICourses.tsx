@@ -11,8 +11,8 @@ const accentClass: Record<string, string> = {
 };
 
 export default function AICourses() {
-  // Only show full regulations (skip legacy partial ones)
-  const regs = REGULATIONS.filter(r => r.id === 'r25-c25' || r.id === 'r25-c26');
+  // Show only the latest regulation
+  const regs = REGULATIONS.filter(r => r.id === 'r25-c26');
 
   return (
     <div className="px-4 sm:px-8 py-6 max-w-[1400px] mx-auto">
