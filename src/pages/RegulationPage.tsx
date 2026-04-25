@@ -279,7 +279,7 @@ export default function RegulationPage() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
                 {reg.semesters.map((s) => {
-                  const aiCount = s.courses.filter(c => c.ai).length;
+                  const aiCount = s.courses.filter(c => c.ai || isAppliedAI(c)).length;
                   return (
                     <NavLink
                       key={s.id}
