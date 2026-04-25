@@ -169,15 +169,23 @@ export default function RegulationPage() {
                   );
                 })}
               </div>
-              {hasApplied && (
-                <p className="text-[11px] text-muted-foreground mb-6 ml-1 leading-relaxed">
-                  Numbers shown as <span className="text-foreground font-semibold">core</span>{" "}
-                  <span className="text-foreground">(core + applied)</span>. Core = courses
-                  explicitly tagged AI/ML. Applied = {appliedAI} project, Industry-Interface
-                  (I²C), and work-in-lieu courses ({appliedAICredits} credits) that contribute
-                  to AI/ML through their deliverables.
-                </p>
-              )}
+              {hasApplied && (() => {
+                const appliedList = reg.semesters.flatMap(s =>
+                  s.courses.filter(isAppliedAI).map(c => ({ ...c, sem: s.short }))
+                );
+                return (
+                  <p className="text-[11px] text-muted-foreground mb-6 ml-1 leading-relaxed">
+                    <span className="text-foreground">Includes:</span>{" "}
+                    {appliedList.map((c, i) => (
+                      <span key={i}>
+                        {i > 0 && ", "}
+                        <span className="text-foreground/90">{c.title}</span>
+                        <span className="text-[hsl(var(--ai-track))] font-semibold"> ({c.C})</span>
+                      </span>
+                    ))}
+                  </p>
+                );
+              })()}
               </>
             );
           })()}
