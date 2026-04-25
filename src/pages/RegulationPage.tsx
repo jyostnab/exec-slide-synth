@@ -24,12 +24,36 @@ export default function RegulationPage() {
   const accent = accentClass[reg.accent];
   const semester = semId ? reg.semesters.find(s => s.id === semId) : null;
 
+  // Courses that count toward AI/ML credits "by application" (projects, I²C, work-in-lieu)
+  // even though they are not explicitly tagged as AI courses.
+  const isAppliedAI = (c: { title?: string; category?: string; ai?: boolean }) => {
+    if (c.ai) return false;
+    const t = `${c.title || ''} ${c.category || ''}`.toLowerCase();
+    return (
+      t.includes('project') ||
+      t.includes('internship') ||
+      t.includes('capstone') ||
+      t.includes('industry interface') ||
+      t.includes('i²c') ||
+      t.includes('i2c') ||
+      t.includes('work-in-lieu') ||
+      t.includes('work in lieu')
+    );
+  };
+
   const totalCourses = reg.semesters.reduce((a, s) => a + s.courses.length, 0);
-  const totalAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
-  const totalAICredits = reg.semesters.reduce(
+  const explicitAI = reg.semesters.reduce((a, s) => a + s.courses.filter(c => c.ai).length, 0);
+  const appliedAI = reg.semesters.reduce((a, s) => a + s.courses.filter(isAppliedAI).length, 0);
+  const totalAI = explicitAI + appliedAI;
+  const explicitAICredits = reg.semesters.reduce(
     (a, s) => a + s.courses.filter(c => c.ai).reduce((b, c) => b + Number(c.C || 0), 0),
     0,
   );
+  const appliedAICredits = reg.semesters.reduce(
+    (a, s) => a + s.courses.filter(isAppliedAI).reduce((b, c) => b + Number(c.C || 0), 0),
+    0,
+  );
+  const totalAICredits = explicitAICredits + appliedAICredits;
   const totalCredits = reg.semesters.reduce((a, s) => a + Number(s.totalCredits || 0), 0);
   const aiPct = totalCredits ? Math.round((totalAICredits / Number(totalCredits)) * 100) : 0;
   const showStats = reg.id !== "r22-c22" && reg.id !== "r22-c24";
@@ -51,8 +75,11 @@ export default function RegulationPage() {
           {/* Stats */}
           {showStats && (() => {
             const aiCourses = reg.semesters.flatMap(s =>
-              s.courses.filter(c => c.ai).map(c => ({ ...c, sem: s.short }))
+              s.courses
+                .filter(c => c.ai || isAppliedAI(c))
+                .map(c => ({ ...c, sem: s.short, applied: !c.ai && isAppliedAI(c) }))
             );
+            const hasApplied = appliedAICredits > 0;
             const stats = [
               {
                 label: "Semesters",
@@ -61,13 +88,14 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: totalAI, accent: true, hover: true },
-              { label: "AI / ML Credits", value: totalAICredits, accent: true, hover: true },
-              { label: "AI / ML %", value: `${aiPct}%`, accent: true },
+              { label: "AI / ML Courses", value: hasApplied ? `${totalAI}*` : totalAI, accent: true, hover: true },
+              { label: "AI / ML Credits", value: hasApplied ? `${totalAICredits}*` : totalAICredits, accent: true, hover: true },
+              { label: "AI / ML %", value: hasApplied ? `${aiPct}%*` : `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ];
             return (
-              <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6">
+              <>
+              <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-2">
                 {stats.map((s) => {
                   const card = (
                     <div
@@ -113,18 +141,41 @@ export default function RegulationPage() {
                               </span>
                               <span className="flex-1 text-foreground/90 leading-snug">
                                 {c.title}
+                                {c.applied && (
+                                  <span className="ml-1 text-[9px] uppercase tracking-widest text-muted-foreground">
+                                    · applied
+                                  </span>
+                                )}
                               </span>
-                              <span className="text-[hsl(var(--ai-track))] font-semibold tabular-nums shrink-0">
+                              <span
+                                className={cn(
+                                  "font-semibold tabular-nums shrink-0",
+                                  c.applied ? "text-muted-foreground" : "text-[hsl(var(--ai-track))]"
+                                )}
+                              >
                                 {c.C}
                               </span>
                             </li>
                           ))}
                         </ul>
+                        {hasApplied && (
+                          <div className="px-4 py-2 border-t border-border/60 text-[10px] text-muted-foreground leading-snug">
+                            * Includes {appliedAI} project / I²C / work-in-lieu courses
+                            ({appliedAICredits} credits) applied to AI/ML.
+                          </div>
+                        )}
                       </HoverCardContent>
                     </HoverCard>
                   );
                 })}
               </div>
+              {hasApplied && (
+                <p className="text-[11px] text-muted-foreground mb-6 ml-1">
+                  * AI/ML totals include {appliedAICredits} credits from project,
+                  Industry-Interface (I²C), and work-in-lieu courses applied to AI/ML.
+                </p>
+              )}
+              </>
             );
           })()}
 
@@ -228,7 +279,7 @@ export default function RegulationPage() {
               </div>
               <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 mb-8">
                 {reg.semesters.map((s) => {
-                  const aiCount = s.courses.filter(c => c.ai).length;
+                  const aiCount = s.courses.filter(c => c.ai || isAppliedAI(c)).length;
                   return (
                     <NavLink
                       key={s.id}
