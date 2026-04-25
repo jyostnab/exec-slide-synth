@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import CurriculumLayout from "./components/CurriculumLayout";
 import RegulationPage from "./pages/RegulationPage";
 import Overview from "./pages/Overview";
+import AICourses from "./pages/AICourses";
 
 const queryClient = new QueryClient();
 
