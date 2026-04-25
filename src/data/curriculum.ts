@@ -238,6 +238,17 @@ const R25_C26_IV_I: Semester = {
   ],
 };
 
+const R25_C25_IV_I: Semester = {
+  id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 16,
+  courses: [
+    tag({ title: 'Dept. Specific (Professional Ethics, AI Governance & Risk Assessment)', L:1,T:2,P:0,SL:1,C:2, category: 'Humanities' }),
+    { ...tag({ title: 'Dept Elective (Reinforcement Learning)', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-5' }), ai: true, highlight: 'Reinforcement Learning' },
+    { ...tag({ title: 'Dept Elective (Multi-Agentic Systems and LLM Engineering)', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-6' }), ai: true, highlight: 'Multi-Agentic Systems & LLM Engineering' },
+    tag({ title: 'Work-in-Lieu of Course', L:0,T:2,P:4,SL:0,C:3, category: 'Department Elective-7' }),
+    tag({ title: 'Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-3' }),
+  ],
+};
+
 const R25_C26_IV_II: Semester = {
   id: '4-2', label: 'IV Year — II Semester', short: 'IV-II', totalCredits: 12,
   courses: [
