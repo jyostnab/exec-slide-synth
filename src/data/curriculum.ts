@@ -121,7 +121,7 @@ const R25_C25_I_II: Semester = {
 };
 
 const R25_C26_II_I: Semester = {
-  id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 24,
+  id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 25,
   courses: [
     tag({ title: 'Statistical Foundations for Machine Learning', L:3,T:0,P:2,SL:2,C:4, category: 'Basic Sciences' }),
     tag({ title: 'Optimization Techniques for Artificial Intelligence', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
@@ -135,7 +135,7 @@ const R25_C26_II_I: Semester = {
 };
 
 const R25_C25_II_I: Semester = {
-  id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 24,
+  id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 25,
   courses: [
     tag({ title: 'Statistical Foundations for Machine Learning', L:3,T:0,P:2,SL:2,C:4, category: 'Basic Sciences' }),
     tag({ title: 'Optimization Techniques for Artificial Intelligence', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
@@ -149,7 +149,7 @@ const R25_C25_II_I: Semester = {
 };
 
 const R25_C26_II_II: Semester = {
-  id: '2-2', label: 'II Year — II Semester', short: 'II-II', totalCredits: 23,
+  id: '2-2', label: 'II Year — II Semester', short: 'II-II', totalCredits: 25,
   courses: [
     tag({ title: 'Linear Algebra for ML (Dept. Specific – Maths)', L:3,T:0,P:2,SL:2,C:4, category: 'Basic Sciences' }),
     tag({ title: 'Data Visualization (Industry Interface – I²C)', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
@@ -177,7 +177,7 @@ const R25_C25_II_II: Semester = {
 };
 
 const R25_C26_III_I: Semester = {
-  id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 21,
+  id: '3-1', label: 'III Year — I Semester', short: 'III-I', totalCredits: 20,
   courses: [
     tag({ title: 'Soft Skills Laboratory', L:0,T:0,P:2,C:1, category: 'Humanities' }),
     tag({ title: 'Quantitative Aptitude and Logical Reasoning', L:0,T:2,P:0,C:1, category: 'Humanities' }),
