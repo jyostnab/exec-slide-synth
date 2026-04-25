@@ -153,7 +153,7 @@ const R25_C25_II_I: Semester = {
     tag({ title: 'Data Structures', L:2,T:2,P:2,SL:2,C:4, category: 'Basic Engineering' }),
     { ...tag({ title: 'Industry Interface – I²C', replacedTitle: 'Design Thinking and Engineering Orientation', L:0,T:2,P:0,SL:0,C:1, category: 'Basic Engineering', highlight: 'Agentic AI Tools' }), ai: true },
     tag({ title: 'AI Search Methods for Problem Solving', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-2' }),
-    tag({ title: 'Database Management Systems', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-3' }),
+    tag({ title: 'Database Management Systems', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-3' }),
     tag({ title: 'Object Oriented Programming', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-6' }),
   ],
 };
