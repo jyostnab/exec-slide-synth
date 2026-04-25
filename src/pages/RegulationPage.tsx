@@ -83,9 +83,12 @@ export default function RegulationPage() {
             const stats = [
               {
                 label: "Semesters",
-                value: reg.semesters.some(s => s.id === 'pre')
-                  ? `${reg.semesters.length - 1} + presem`
-                  : reg.semesters.length,
+                value: (() => {
+                  const preCount = reg.semesters.filter(s => s.id === 'pre' || s.id === 'induction').length;
+                  return preCount > 0
+                    ? `${reg.semesters.length - preCount} + ${preCount === 1 ? 'presem' : 'pre'}`
+                    : reg.semesters.length;
+                })(),
               },
               { label: "Courses", value: totalCourses },
               { label: "AI / ML Courses", value: hasApplied ? `${explicitAI} (${totalAI})` : explicitAI, accent: true, hover: true },
