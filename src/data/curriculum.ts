@@ -191,7 +191,7 @@ const R25_C25_II_II: Semester = {
   id: '2-2', label: 'II Year — II Semester', short: 'II-II', totalCredits: 24,
   courses: [
     tag({ title: 'Linear Algebra for ML (Dept. Specific – Maths)', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
-    tag({ title: 'Industry Interface – I²C', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
+    tag({ title: 'Design Thinking and Engineering Orientation', replacedTitle: 'Industry Interface – I²C', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
     tag({ title: 'Open Elective (NPTEL)', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-I' }),
     tag({ title: 'Algorithm Design and Analysis', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-5' }),
     tag({ title: 'Machine Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-6' }),
