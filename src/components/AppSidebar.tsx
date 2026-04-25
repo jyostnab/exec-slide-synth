@@ -107,6 +107,12 @@ export function AppSidebar() {
                           .replace(/—/g, '-')
                           .replace(/\s+/g, ' ')
                           .trim();
+                        const induction = sem.id === 'pre'
+                          ? reg.semesters.find(x => x.id === 'induction')
+                          : undefined;
+                        const credits = induction
+                          ? Number(sem.totalCredits) + Number(induction.totalCredits)
+                          : sem.totalCredits;
                         return (
                           <SidebarMenuSubItem key={sem.id}>
                             <SidebarMenuSubButton
@@ -118,7 +124,7 @@ export function AppSidebar() {
                                 <ChevronRight className="h-3.5 w-3.5 opacity-60" />
                                 <span className="truncate">{shortLabel}</span>
                                 <span className="ml-auto text-xs text-muted-foreground tabular-nums">
-                                  {sem.totalCredits}
+                                  {credits}
                                 </span>
                               </NavLink>
                             </SidebarMenuSubButton>
