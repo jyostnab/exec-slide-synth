@@ -205,10 +205,10 @@ const R25_C26_III_II: Semester = {
 const R25_C26_IV_I: Semester = {
   id: '4-1', label: 'IV Year — I Semester', short: 'IV-I', totalCredits: 17,
   courses: [
-    tag({ title: 'Professional Ethics, AI Governance & Risk Assessment', L:1,T:2,P:0,SL:1,C:2, category: 'Humanities' }),
-    tag({ title: 'Big Data Analytics', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-5' }),
-    tag({ title: 'IoT', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-6' }),
-    tag({ title: 'Work-in-Lieu (Research papers / Patents / Global certifications)', L:0,T:2,P:12,C:4, category: 'Department Elective-7' }),
+    tag({ title: 'Dept. Specific (Professional Ethics, AI Governance & Risk Assessment)', L:1,T:2,P:0,SL:1,C:2, category: 'Humanities' }),
+    { ...tag({ title: 'Dept Elective (Reinforcement Learning)', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-5' }), ai: true, highlight: 'Reinforcement Learning' },
+    { ...tag({ title: 'Dept Elective (Multi-Agentic Systems and LLM Engineering)', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-6' }), ai: true, highlight: 'Multi-Agentic Systems & LLM Engineering' },
+    tag({ title: 'Work-in-Lieu of Course - Research paper publications / patents / presentations / global certifications', L:0,T:2,P:12,SL:0,C:4, category: 'Department Elective-7' }),
     tag({ title: 'Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-3' }),
   ],
 };
