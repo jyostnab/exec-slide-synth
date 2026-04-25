@@ -88,9 +88,9 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: hasApplied ? `${totalAI}*` : totalAI, accent: true, hover: true },
-              { label: "AI / ML Credits", value: hasApplied ? `${totalAICredits}*` : totalAICredits, accent: true, hover: true },
-              { label: "AI / ML %", value: hasApplied ? `${aiPct}%*` : `${aiPct}%`, accent: true },
+              { label: "AI / ML Courses", value: hasApplied ? `${explicitAI} (${totalAI})` : explicitAI, accent: true, hover: true },
+              { label: "AI / ML Credits", value: hasApplied ? `${explicitAICredits} (${totalAICredits})` : explicitAICredits, accent: true, hover: true },
+              { label: "AI / ML %", value: hasApplied ? `${Math.round((explicitAICredits / Number(totalCredits)) * 100)}% (${aiPct}%)` : `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ];
             return (
@@ -171,8 +171,10 @@ export default function RegulationPage() {
               </div>
               {hasApplied && (
                 <p className="text-[11px] text-muted-foreground mb-6 ml-1">
-                  * AI/ML totals include {appliedAICredits} credits from project,
-                  Industry-Interface (I²C), and work-in-lieu courses applied to AI/ML.
+                  Format: <span className="text-foreground">explicit AI</span> (
+                  <span className="text-foreground">including {appliedAICredits} applied credits</span>
+                  ) — applied = project, Industry-Interface (I²C), and work-in-lieu courses
+                  contributing to AI/ML.
                 </p>
               )}
               </>
