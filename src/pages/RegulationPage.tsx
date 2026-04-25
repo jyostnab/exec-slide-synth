@@ -346,11 +346,17 @@ export default function RegulationPage() {
         </>
       )}
 
-      {semester && (
-        <div className="space-y-4">
-          <SemesterTable semester={semester} accent={accent} />
-        </div>
-      )}
+      {semester && (() => {
+        const induction = semester.id === 'pre'
+          ? reg.semesters.find(s => s.id === 'induction')
+          : undefined;
+        return (
+          <div className="space-y-6">
+            {induction && <SemesterTable semester={induction} accent={accent} />}
+            <SemesterTable semester={semester} accent={accent} />
+          </div>
+        );
+      })()}
     </div>
   );
 }
