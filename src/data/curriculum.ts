@@ -123,7 +123,7 @@ const R25_C25_I_II: Semester = {
 const R25_C26_II_I: Semester = {
   id: '2-1', label: 'II Year — I Semester', short: 'II-I', totalCredits: 24,
   courses: [
-    tag({ title: 'Statistical Foundations for Machine Learning', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
+    tag({ title: 'Statistical Foundations for Machine Learning', L:3,T:0,P:2,SL:2,C:4, category: 'Basic Sciences' }),
     tag({ title: 'Optimization Techniques for Artificial Intelligence', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
     tag({ title: 'Data Engineering Foundations', L:0,T:2,P:2,SL:0,C:2, category: 'Professional Core-1' }),
     tag({ title: 'Data Structures', L:2,T:2,P:2,SL:2,C:4, category: 'Basic Engineering' }),
