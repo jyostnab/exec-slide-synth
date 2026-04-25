@@ -99,6 +99,21 @@ const R25_C26_I_I: Semester = {
   ],
 };
 
+const R25_C25_I_I: Semester = {
+  id: '1-1', label: 'I Year — I Semester', short: 'I-I', totalCredits: 22,
+  courses: [
+    tag({ title: 'Mathematics – I', C: 4, category: 'Basic Sciences' }),
+    tag({ title: 'Physics / Chemistry', C: 4, category: 'Basic Sciences' }),
+    tag({ title: 'Basics of Electrical & Electronics Engineering / Engineering Graphics', C: 3, category: 'Basic Engineering' }),
+    tag({ title: 'Programming for Problem Solving using C', C: 4, category: 'Basic Engineering' }),
+    tag({ title: 'English Proficiency & Communication Skills (PET)', C: 1, category: 'Humanities' }),
+    tag({ title: 'Environmental / Management Studies', C: 3, category: 'Basic Sciences / Humanities' }),
+    tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 2', C: 1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 3', C: 1, category: 'Binary Graded' }),
+  ],
+};
+
 const R25_C26_I_II: Semester = {
   id: '1-2', label: 'I Year — II Semester', short: 'I-II', totalCredits: 24,
   courses: [
