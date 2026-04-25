@@ -56,7 +56,7 @@ const tag = (c: Omit<Course, 'ai'>): Course => ({ ...c, ai: isAI(c.title) });
 // ────────────────────────────────────────────────────────────────────────────
 const R25_C26_PRE: Semester = {
   id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 3,
-  notes: 'Early AI literacy before the core degree begins',
+  
   courses: [
     tag({ code: '25SA101', title: 'Orientation Program (Induction Program)', L:0, T:2, P:0, SL:0, C: 1, category: 'Binary Graded' }),
     tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
