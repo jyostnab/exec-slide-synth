@@ -74,6 +74,14 @@ export function AppSidebar() {
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild isActive={path === "/ai-courses"} className="text-sm">
+                  <NavLink to="/ai-courses">
+                    <Star className="h-4 w-4" />
+                    {!collapsed && <span>AI / ML Courses</span>}
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
