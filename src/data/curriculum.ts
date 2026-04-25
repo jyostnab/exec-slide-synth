@@ -253,7 +253,7 @@ const r25Semesters: Semester[] = [
 ];
 
 const r25C25Semesters: Semester[] = [
-  R25_C25_INDUCTION, R25_C25_PRE, R25_C26_I_I, R25_C26_I_II,
+  R25_C25_INDUCTION, R25_C25_PRE, R25_C25_I_I, R25_C26_I_II,
   R25_C25_II_I, R25_C25_II_II,
   R25_C26_III_I, R25_C26_III_II,
   R25_C26_IV_I, R25_C26_IV_II,
