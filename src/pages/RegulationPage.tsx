@@ -170,11 +170,12 @@ export default function RegulationPage() {
                 })}
               </div>
               {hasApplied && (
-                <p className="text-[11px] text-muted-foreground mb-6 ml-1">
-                  Format: <span className="text-foreground">explicit AI</span> (
-                  <span className="text-foreground">including {appliedAICredits} applied credits</span>
-                  ) — applied = project, Industry-Interface (I²C), and work-in-lieu courses
-                  contributing to AI/ML.
+                <p className="text-[11px] text-muted-foreground mb-6 ml-1 leading-relaxed">
+                  Numbers shown as <span className="text-foreground font-semibold">core</span>{" "}
+                  <span className="text-foreground">(core + applied)</span>. Core = courses
+                  explicitly tagged AI/ML. Applied = {appliedAI} project, Industry-Interface
+                  (I²C), and work-in-lieu courses ({appliedAICredits} credits) that contribute
+                  to AI/ML through their deliverables.
                 </p>
               )}
               </>
