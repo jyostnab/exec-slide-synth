@@ -272,11 +272,6 @@ export default function RegulationPage() {
 
       {semester && (
         <div className="space-y-4">
-          <div className="flex items-center gap-2 text-xs">
-            <NavLink to={`/r/${reg.id}`} className="text-muted-foreground hover:text-primary">
-              ← Back to {reg.code} overview
-            </NavLink>
-          </div>
           <SemesterTable semester={semester} accent={accent} />
         </div>
       )}
