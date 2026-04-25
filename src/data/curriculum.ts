@@ -55,27 +55,19 @@ const tag = (c: Omit<Course, 'ai'>): Course => ({ ...c, ai: isAI(c.title) });
 // R25-C26 (latest, full 4-year program with R25 regulation)
 // ────────────────────────────────────────────────────────────────────────────
 const R25_C26_PRE: Semester = {
-  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 8,
+  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 3,
   notes: 'Early AI literacy before the core degree begins',
   courses: [
     tag({ code: '25SA101', title: 'Orientation Program (Induction Program)', L:0, T:2, P:0, SL:0, C: 1, category: 'Binary Graded' }),
-    tag({ title: 'Mathematics', C: 1, category: 'Basic Sciences' }),
-    tag({ title: 'English Communication', C: 1, category: 'Humanities' }),
-    tag({ title: 'Aptitude & Logical Reasoning', C: 1, category: 'Humanities' }),
-    tag({ title: 'AI Tools and Prompt Engineering', C: 2, category: 'Basic Engineering' }),
     tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
     tag({ title: 'Binary Graded Course – 2', C: 1, category: 'Binary Graded' }),
   ],
 };
 
 const R25_C25_PRE: Semester = {
-  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 7,
+  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 3,
   courses: [
     tag({ code: '25SA101', title: 'Orientation Program (Induction Program)', L:0, T:2, P:0, SL:0, C: 1, category: 'Binary Graded' }),
-    tag({ title: 'Mathematics', C: 1, category: 'Basic Sciences' }),
-    tag({ title: 'English Communication', C: 1, category: 'Humanities' }),
-    tag({ title: 'Aptitude & Logical Reasoning', C: 1, category: 'Humanities' }),
-    tag({ title: 'IT Tools', C: 1, category: 'Basic Engineering' }),
     tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
     tag({ title: 'Binary Graded Course – 2', C: 1, category: 'Binary Graded' }),
   ],
