@@ -75,8 +75,11 @@ export default function RegulationPage() {
           {/* Stats */}
           {showStats && (() => {
             const aiCourses = reg.semesters.flatMap(s =>
-              s.courses.filter(c => c.ai).map(c => ({ ...c, sem: s.short }))
+              s.courses
+                .filter(c => c.ai || isAppliedAI(c))
+                .map(c => ({ ...c, sem: s.short, applied: !c.ai && isAppliedAI(c) }))
             );
+            const hasApplied = appliedAICredits > 0;
             const stats = [
               {
                 label: "Semesters",
@@ -85,13 +88,14 @@ export default function RegulationPage() {
                   : reg.semesters.length,
               },
               { label: "Courses", value: totalCourses },
-              { label: "AI / ML Courses", value: totalAI, accent: true, hover: true },
-              { label: "AI / ML Credits", value: totalAICredits, accent: true, hover: true },
-              { label: "AI / ML %", value: `${aiPct}%`, accent: true },
+              { label: "AI / ML Courses", value: hasApplied ? `${totalAI}*` : totalAI, accent: true, hover: true },
+              { label: "AI / ML Credits", value: hasApplied ? `${totalAICredits}*` : totalAICredits, accent: true, hover: true },
+              { label: "AI / ML %", value: hasApplied ? `${aiPct}%*` : `${aiPct}%`, accent: true },
               { label: "Total Credits", value: totalCredits },
             ];
             return (
-              <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-6">
+              <>
+              <div className="grid grid-cols-2 sm:grid-cols-6 gap-3 mb-2">
                 {stats.map((s) => {
                   const card = (
                     <div
@@ -137,18 +141,41 @@ export default function RegulationPage() {
                               </span>
                               <span className="flex-1 text-foreground/90 leading-snug">
                                 {c.title}
+                                {c.applied && (
+                                  <span className="ml-1 text-[9px] uppercase tracking-widest text-muted-foreground">
+                                    · applied
+                                  </span>
+                                )}
                               </span>
-                              <span className="text-[hsl(var(--ai-track))] font-semibold tabular-nums shrink-0">
+                              <span
+                                className={cn(
+                                  "font-semibold tabular-nums shrink-0",
+                                  c.applied ? "text-muted-foreground" : "text-[hsl(var(--ai-track))]"
+                                )}
+                              >
                                 {c.C}
                               </span>
                             </li>
                           ))}
                         </ul>
+                        {hasApplied && (
+                          <div className="px-4 py-2 border-t border-border/60 text-[10px] text-muted-foreground leading-snug">
+                            * Includes {appliedAI} project / I²C / work-in-lieu courses
+                            ({appliedAICredits} credits) applied to AI/ML.
+                          </div>
+                        )}
                       </HoverCardContent>
                     </HoverCard>
                   );
                 })}
               </div>
+              {hasApplied && (
+                <p className="text-[11px] text-muted-foreground mb-6 ml-1">
+                  * AI/ML totals include {appliedAICredits} credits from project,
+                  Industry-Interface (I²C), and work-in-lieu courses applied to AI/ML.
+                </p>
+              )}
+              </>
             );
           })()}
 
