@@ -55,12 +55,12 @@ const tag = (c: Omit<Course, 'ai'>): Course => ({ ...c, ai: isAI(c.title) });
 // R25-C26 (latest, full 4-year program with R25 regulation)
 // ────────────────────────────────────────────────────────────────────────────
 const R25_C26_PRE: Semester = {
-  id: 'pre', label: 'I Year — Pre-Semester', short: 'Pre', totalCredits: 3,
-  
+  id: 'pre', label: 'I Year — Pre-Semester (Induction Program)', short: 'Pre', totalCredits: 4,
   courses: [
-    tag({ code: '25SA101', title: 'Orientation Program (Induction Program)', L:0, T:2, P:0, SL:0, C: 1, category: 'Binary Graded' }),
-    tag({ title: 'Binary Graded Course – 1', C: 1, category: 'Binary Graded' }),
-    tag({ title: 'Binary Graded Course – 2', C: 1, category: 'Binary Graded' }),
+    tag({ title: 'Orientation Program (Induction Program)', L:0, T:2, P:0, SL:0, C:1, category: 'Binary Graded' }),
+    tag({ title: 'Mathematics', L:0, T:2, P:0, SL:0, C:1, category: 'Basic Sciences' }),
+    tag({ title: 'English Communication', L:0, T:2, P:0, SL:0, C:1, category: 'Humanities' }),
+    tag({ title: 'Humanities Course', L:0, T:2, P:0, SL:0, C:1, category: 'Humanities' }),
   ],
 };
 
@@ -74,29 +74,35 @@ const R25_C25_PRE: Semester = {
 };
 
 const R25_C26_I_I: Semester = {
-  id: '1-1', label: 'I Year — I Semester', short: 'I-I', totalCredits: 22,
+  id: '1-1', label: 'I Year — I Semester', short: 'I-I', totalCredits: 24,
   courses: [
-    tag({ title: 'Mathematics – I', L:3,T:1,P:0,C:4, category: 'Basic Sciences' }),
-    tag({ title: 'Physics / Chemistry', L:3,T:0,P:2,C:4, category: 'Basic Sciences' }),
-    tag({ title: 'Programming for Problem Solving (C)', L:3,T:0,P:2,C:4, category: 'Basic Engineering' }),
-    tag({ title: 'Basic Electrical & Electronics / Engineering Graphics', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
-    tag({ title: 'English Proficiency & Communication Skills', L:0,T:0,P:2,C:1, category: 'Humanities' }),
-    tag({ title: 'Environmental / Management Studies', L:3,T:0,P:0,C:3, category: 'Humanities' }),
-    tag({ title: 'Binary Graded Courses (3)', C:3, category: 'Binary Graded' }),
+    tag({ title: 'Linear Algebra', L:3,T:2,P:0,SL:3,C:4, category: 'Basic Sciences' }),
+    tag({ title: 'Engineering Chemistry', L:3,T:0,P:2,SL:3,C:4, category: 'Basic Sciences' }),
+    tag({ title: 'Programming in C', L:2,T:0,P:4,SL:2,C:4, category: 'Basic Engineering' }),
+    tag({ title: 'Basic of Electrical & Electronics Engineering', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Engineering' }),
+    { ...tag({ title: 'Agentic Tools', L:0,T:2,P:2,SL:0,C:2, category: 'Basic Engineering' }), ai: true, highlight: 'Agentic AI Tools' },
+    tag({ title: 'Management Studies', L:2,T:2,P:0,SL:2,C:3, category: 'Humanities' }),
+    tag({ title: 'English Proficiency & Communication Skills (PET)', L:0,T:0,P:2,SL:0,C:1, category: 'Humanities' }),
+    tag({ title: 'Binary Graded Course – 1', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 2', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 3', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
   ],
 };
 
 const R25_C26_I_II: Semester = {
   id: '1-2', label: 'I Year — II Semester', short: 'I-II', totalCredits: 24,
   courses: [
-    tag({ title: 'Mathematics – II', L:3,T:1,P:0,C:4, category: 'Basic Sciences' }),
-    tag({ title: 'Physics / Chemistry', L:3,T:0,P:2,C:4, category: 'Basic Sciences' }),
-    { ...tag({ title: 'Python Programming', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }), ai: true },
-    tag({ title: 'Basic Electrical & Electronics / Engineering Graphics', L:2,T:0,P:2,C:3, category: 'Basic Engineering' }),
-    tag({ title: 'Technical English Communication', L:1,T:0,P:2,C:2, category: 'Humanities' }),
-    tag({ title: 'Environmental / Management Studies', L:3,T:0,P:0,C:3, category: 'Humanities' }),
-    tag({ title: 'Cyber Security', L:1,T:0,P:0,C:1, category: 'Basic Engineering' }),
-    tag({ title: 'Binary Graded Courses (4)', C:4, category: 'Binary Graded' }),
+    tag({ title: 'Calculus and Ordinary Differential Equations', L:3,T:2,P:0,SL:3,C:4, category: 'Basic Sciences' }),
+    tag({ title: 'Engineering Physics', L:3,T:0,P:2,SL:3,C:4, category: 'Basic Sciences' }),
+    tag({ title: 'Engineering Drawing', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Engineering' }),
+    { ...tag({ title: 'Python Programming Essentials', L:1,T:2,P:2,SL:1,C:3, category: 'Basic Engineering' }), ai: true },
+    tag({ title: 'Technical English Communication', L:1,T:0,P:2,SL:1,C:2, category: 'Humanities' }),
+    tag({ title: 'Environmental Studies', L:2,T:2,P:0,SL:2,C:3, category: 'Basic Sciences' }),
+    tag({ title: 'Cyber Security', L:0,T:1,P:1,SL:0,C:1, category: 'Basic Engineering' }),
+    tag({ title: 'Binary Graded Course – 1', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 2', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 3', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
+    tag({ title: 'Binary Graded Course – 4', L:0,T:0,P:2,SL:0,C:1, category: 'Binary Graded' }),
   ],
 };
 
