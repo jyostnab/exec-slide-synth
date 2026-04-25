@@ -130,7 +130,7 @@ const R25_C26_II_I: Semester = {
     tag({ title: 'Design Thinking and Engineering Orientation', L:0,T:2,P:0,SL:0,C:1, category: 'Basic Engineering' }),
     tag({ title: 'AI Search Methods for Problem Solving', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-2' }),
     tag({ title: 'Database Management Systems', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-3' }),
-    tag({ title: 'Object Oriented Programming', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-6' }),
+    tag({ title: 'Object Oriented Programming', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-4' }),
   ],
 };
 
@@ -154,10 +154,10 @@ const R25_C26_II_II: Semester = {
     tag({ title: 'Linear Algebra for ML (Dept. Specific – Maths)', L:2,T:0,P:2,SL:2,C:3, category: 'Basic Sciences' }),
     tag({ title: 'Data Visualization (Industry Interface – I²C)', L:0,T:2,P:0,SL:0,C:1, category: 'Department Elective-I' }),
     tag({ title: 'Open Elective (NPTEL)', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-I' }),
-    tag({ title: 'Algorithm Design and Analysis', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-4' }),
-    tag({ title: 'Machine Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-5' }),
-    tag({ title: 'Full Stack Development', L:2,T:0,P:4,SL:2,C:4, category: 'Professional Core-10' }),
-    tag({ title: 'Digital Logic & Computer Organization', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-7' }),
+    tag({ title: 'Algorithm Design and Analysis', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-5' }),
+    tag({ title: 'Machine Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-6' }),
+    tag({ title: 'Full Stack Development', L:2,T:0,P:4,SL:2,C:4, category: 'Professional Core-7' }),
+    tag({ title: 'Digital Logic & Computer Organization', L:2,T:2,P:2,SL:2,C:4, category: 'Professional Core-8' }),
     tag({ title: 'Mini Project', C:1, category: 'Project' }),
   ],
 };
@@ -182,10 +182,10 @@ const R25_C26_III_I: Semester = {
     tag({ title: 'Soft Skills Laboratory', L:0,T:0,P:2,C:1, category: 'Humanities' }),
     tag({ title: 'Quantitative Aptitude and Logical Reasoning', L:0,T:2,P:0,C:1, category: 'Humanities' }),
     tag({ title: 'Machine Learning Operations (MLOps)', L:2,T:0,P:2,SL:3,C:3, category: 'Department Elective-2' }),
-    tag({ title: 'Deep Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-8' }),
-    tag({ title: 'Computer Vision', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-9' }),
-    tag({ title: 'Operating Systems', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core' }),
-    tag({ title: 'Computer Networks', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-11' }),
+    tag({ title: 'Operating Systems', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-9' }),
+    tag({ title: 'Deep Learning', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-10' }),
+    tag({ title: 'Computer Vision', L:3,T:0,P:2,SL:2,C:4, category: 'Professional Core-11' }),
+    tag({ title: 'Computer Networks', L:3,T:0,P:2,SL:3,C:4, category: 'Professional Core-12' }),
   ],
 };
 
@@ -196,8 +196,8 @@ const R25_C26_III_II: Semester = {
     tag({ title: 'Cloud Computing', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-3' }),
     tag({ title: 'Cloud Computing for AI', L:3,T:0,P:2,SL:3,C:4, category: 'Department Elective-4' }),
     tag({ title: 'NPTEL / Open Elective', L:3,T:0,P:0,SL:3,C:3, category: 'Open Elective-2' }),
-    tag({ title: 'Natural Language Processing', L:2,T:0,P:2,SL:2,C:4, category: 'Professional Core-12' }),
-    tag({ title: 'Big Data Analytics', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-13' }),
+    tag({ title: 'Natural Language Processing', L:2,T:0,P:2,SL:2,C:4, category: 'Professional Core-13' }),
+    tag({ title: 'Big Data Analytics', L:2,T:0,P:2,SL:2,C:3, category: 'Professional Core-14' }),
     tag({ title: 'Project', C:1, category: 'Project' }),
   ],
 };
