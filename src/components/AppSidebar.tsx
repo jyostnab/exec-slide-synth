@@ -36,11 +36,11 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
       <SidebarHeader className="border-b border-sidebar-border/70">
         <div className="flex items-center gap-2 px-2 py-2">
-          <div className="h-9 w-9 rounded-md border border-sidebar-border/70 bg-background grid place-items-center overflow-hidden">
+          <div className="h-9 w-9 rounded-md border border-sidebar-border/70 bg-white grid place-items-center overflow-hidden shrink-0">
             <img
               src={vignanLogo}
               alt="VFSTR logo"
-              className="h-7 w-7 object-contain"
+              className="h-8 w-8 object-contain"
             />
           </div>
           {!collapsed && (
