@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound.tsx";
 import CurriculumLayout from "./components/CurriculumLayout";
 import RegulationPage from "./pages/RegulationPage";
 import Overview from "./pages/Overview";
+import AICourses from "./pages/AICourses";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +22,7 @@ const App = () => (
           <Route element={<CurriculumLayout />}>
             <Route path="/" element={<Index />} />
             <Route path="/overview" element={<Overview />} />
+            <Route path="/ai-courses" element={<AICourses />} />
             <Route path="/r/:regId" element={<RegulationPage />} />
             <Route path="/r/:regId/:semId" element={<RegulationPage />} />
           </Route>

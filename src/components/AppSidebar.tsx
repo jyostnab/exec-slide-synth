@@ -1,5 +1,5 @@
 import { NavLink, useLocation } from "react-router-dom";
-import { Sparkles, ChevronRight, Home, Compass } from "lucide-react";
+import { Sparkles, ChevronRight, Home, Compass, Star } from "lucide-react";
 import {
   Sidebar,
   SidebarContent,
@@ -71,6 +71,14 @@ export function AppSidebar() {
                   <NavLink to="/overview">
                     <Compass className="h-4 w-4" />
                     {!collapsed && <span>Overview</span>}
+                  </NavLink>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+              <SidebarMenuItem>
+                <SidebarMenuButton asChild isActive={path === "/ai-courses"} className="text-sm">
+                  <NavLink to="/ai-courses">
+                    <Star className="h-4 w-4" />
+                    {!collapsed && <span>AI / ML Courses</span>}
                   </NavLink>
                 </SidebarMenuButton>
               </SidebarMenuItem>
