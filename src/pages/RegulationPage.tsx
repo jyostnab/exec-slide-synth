@@ -173,8 +173,12 @@ export default function RegulationPage() {
                 })}
               </div>
               {hasApplied && (() => {
+                const isI2C = (c: { title?: string; category?: string }) => {
+                  const t = `${c.title || ''} ${c.category || ''}`.toLowerCase();
+                  return t.includes('industry interface') || t.includes('i²c') || t.includes('i2c');
+                };
                 const appliedList = reg.semesters.flatMap(s =>
-                  s.courses.filter(isAppliedAI).map(c => ({ ...c, sem: s.short }))
+                  s.courses.filter(c => isAppliedAI(c) || isI2C(c)).map(c => ({ ...c, sem: s.short }))
                 );
                 return (
                   <p className="text-[11px] text-muted-foreground mb-6 ml-1 leading-relaxed">
