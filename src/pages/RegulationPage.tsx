@@ -339,9 +339,15 @@ export default function RegulationPage() {
 
           {/* All semesters stacked */}
           <div className="space-y-6">
-            {reg.semesters.map((s) => (
-              <SemesterTable key={s.id} semester={s} accent={accent} />
-            ))}
+            {reg.semesters.filter(s => s.id !== 'induction').map((s) => {
+              const induction = s.id === 'pre' ? reg.semesters.find(x => x.id === 'induction') : undefined;
+              return (
+                <div key={s.id} className="space-y-6">
+                  {induction && <SemesterTable semester={induction} accent={accent} />}
+                  <SemesterTable semester={s} accent={accent} />
+                </div>
+              );
+            })}
           </div>
         </>
       )}
